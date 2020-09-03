@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="./library/css/bootstrap.min.css" rel="stylesheet">
+            </head>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <br>
+            </div>
+            <div class="col-md-9">
+                <h2 align="center">Papillary Thyroid Carcinoma related diagnostic biomarker target development and targeted drug selection </h2>
+                <h4 align="center">Author: Qianhui Yang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Research use only</h4>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-3" >
+                <div class="navbar navbar-default" role="navigation">
+                    <ul class="nav">
+                        <li><a href="section1.html">1.Intro(Introduction)</a></li>
+                        <li><a href="section2.html">2.Query(Genetic expression and clinical data from TCGA)</a></li>
+                        <li><a href="section3.html">3.DifGene(Screening differentially expressed genes of each subtype)</a></li>
+                        <li><a href="section4.html">4.seriescluster(Analyzing the differentially expressed genes of each subtype distinguished from other subtypes)</a></li>
+                        <li><a href="section5.html">5.Boxplot(DEG box plot)</a></li>
+                        <li><a href="section6.html">6.GOPathway(DEG KEGG and GO analysis)</a></li>
+                        <li><a href="section7.html">7.Mutation(analysis of the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section8.html">8.expressinmutdrivergene(analysis od the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section9.html">9.Stargene(specific gene and immune correlation analysis of each subtype)</a></li>
+                        <li><a href="section10.html">10.ImmuneScore(analysis of the correlation between specific genes and immune index and immune cell abundance of each subtype)</a></li>
+                        <li><a href="section11.html">11.GenePanel(screening  survival-related gene panels in the classical subtype)</a></li>
+                        <li><a href="section12.html">12.GenePanel(screening the gene panel associated with lymph node involvement in each subtype)</a></li>
+                        <li><a href="section13.html">13.GeneSelect(the status of each subtype screening gene)</a></li>
+                        <li><a href="section14.html">14.Cmap(analysis of the correlation between genes associated with lymph node involvement in various subtype)</a></li>
+                        <li><a href="section15.html">15.Tool(software and database)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                </br>
+<h3>Software</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p><b>R (3.4.1)</b> <a target="_blank" href="https://www.r-project.org/">https://www.r-project.org/</a></p>
+<p>R Core Team (2014). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.</p>
+<p><b>Bioconductor</b> <a target="_blank" href="http://www.bioconductor.org/">http://www.bioconductor.org/</a></p>
+<p>Huber W , Carey V J , Gentleman R , et al. Orchestrating high-throughput genomic analysis with Bioconductor[J]. Nature Methods, 2015, 12(2):115-21.</p>
+<p><b>glmnet</b> <a target="_blank" href="https://cran.r-project.org/web/packages/glmnet/">https://cran.r-project.org/web/packages/glmnet/</a></p>
+<p>Friedman J H , Hastie T , Tibshirani R . Regularization Paths for Generalized Linear Models via Coordinate Descent[J]. Journal of Statistical Software, 2010, 033.</p>
+<p><b>elasticnet</b> <a target="_blank" href="https://cran.r-project.org/web/packages/elasticnet/">https://cran.r-project.org/web/packages/elasticnet/</a></p>
+<p>Zou H , Tibshirani H R . Sparse Principal Component Analysis[J]. Journal of Computational and Graphical Statistics, 2006, 15(2):265-286.</p>
+<p><b>STEM</b> <a target="_blank" href="http://www.cs.cmu.edu/~jernst/stem/">http://www.cs.cmu.edu/~jernst/stem/</a></p>
+<p>Ernst J , Bar-Joseph Z . STEM: a tool for the analysis of short time series gene expression data[J]. BMC Bioinformatics, 2006, 7(1):191-0.</p>
+<p><b>CIBERSORT</b> <a target="_blank" href="https://cibersort.stanford.edu/">https://cibersort.stanford.edu/</a></p>
+<p>Gentles, A.J., Newman, A.M., Liu, C.L., et al. (2015). The prognostic landscape of genes and infiltrating immune cells across human cancers. Nat. Med. 21,938–945.</p>
+<p><b>ESTIMATE</b> <a target="_blank" href="http://bioinformatics.mdanderson.org/estimate/rpackage.html">http://bioinformatics.mdanderson.org/estimate/rpackage.html</a></p>
+<p>K Yoshihara, M Shahmoradgoli, E Martínez et al.Inferring tumour purity and stromal and immune cell admixture from expression data. Nature Communications, 2013 , 4(4):2612</p>
+</br>
+<h3>Database</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p><b>TCGA-THCA</b></p>
+<p>Agrawal N, Akbani R, Aksoy BA, et al. Integrated Genomic Characterization of Papillary Thyroid Carcinoma[J]. Cell, 2014, 159(3):676-690.</p>
+<p><b>KEGG</b> <a target="_blank" href="https://www.kegg.jp/">https://www.kegg.jp/</a></p>
+<p>Draghici S, et al. A systems biology approach for pathway level analysis. Genome Res. 2007 Oct;17(10):1537-45. Epub 2007 Sep 4.</p>
+<p><b>GO</b> <a target="_blank" href="http://www.geneontology.org/">http://www.geneontology.org/</a></p>
+<p>Ashburner M, et al. Gene ontology: tool for the unification of biology. The Gene Ontology Consortium. Nat Genet. 2000 May;25(1):25-9.</p>
+<p><b>Connectivity Map</b> <a target="_blank" href="https://portals.broadinstitute.org/cmap/">https://portals.broadinstitute.org/cmap/</a></p>
+<p>Lamb, J., Crawford, E.D., et al. (2006). The Connectivity Map: using gene-expression signatures to connect small molecules, genes, and disease. Science 313, 1929–193</p>
+
+
+			</div>
+		</div>	
+    </div>
+
+<nav class="navbar navbar-default">
+	<div class="navbar-inner navbar-content-center">
+		<p class="text-muted credit" style="padding: 10px;" align="center"><a href="javascript:scroll(0,0)"><font size="4">>>Back to Top<<</font></a></p>
+	</div>
+</nav>
+
+	<div id="footer" class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-inner navbar-content-center">
+			</div>
+		</nav>
+	</div>
+</body>
+</html>

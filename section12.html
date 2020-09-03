@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="./library/css/bootstrap.min.css" rel="stylesheet">
+            </head>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <br>
+            </div>
+            <div class="col-md-9">
+                <h2 align="center">Papillary Thyroid Carcinoma related diagnostic biomarker target development and targeted drug selection </h2>
+                <h4 align="center">Author: Qianhui Yang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Research use only</h4>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-3" >
+                <div class="navbar navbar-default" role="navigation">
+                    <ul class="nav">
+                        <li><a href="section1.html">1.Intro(Introduction)</a></li>
+                        <li><a href="section2.html">2.Query(Genetic expression and clinical data from TCGA)</a></li>
+                        <li><a href="section3.html">3.DifGene(Screening differentially expressed genes of each subtype)</a></li>
+                        <li><a href="section4.html">4.seriescluster(Analyzing the differentially expressed genes of each subtype distinguished from other subtypes)</a></li>
+                        <li><a href="section5.html">5.Boxplot(DEG box plot)</a></li>
+                        <li><a href="section6.html">6.GOPathway(DEG KEGG and GO analysis)</a></li>
+                        <li><a href="section7.html">7.Mutation(analysis of the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section8.html">8.expressinmutdrivergene(analysis od the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section9.html">9.Stargene(specific gene and immune correlation analysis of each subtype)</a></li>
+                        <li><a href="section10.html">10.ImmuneScore(analysis of the correlation between specific genes and immune index and immune cell abundance of each subtype)</a></li>
+                        <li><a href="section11.html">11.GenePanel(screening  survival-related gene panels in the classical subtype)</a></li>
+                        <li><a href="section12.html">12.GenePanel(screening the gene panel associated with lymph node involvement in each subtype)</a></li>
+                        <li><a href="section13.html">13.GeneSelect(the status of each subtype screening gene)</a></li>
+                        <li><a href="section14.html">14.Cmap(analysis of the correlation between genes associated with lymph node involvement in various subtype)</a></li>
+                        <li><a href="section15.html">15.Tool(software and database)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                </br>
+<p>TNM staging is currently the more common tumor staging method in the world. It describes the state of tumor development through three aspects: tumor primary tumor (T), regional lymph node involvement (N), and tumor metastasis.</p>
+<p>The tumor metastasis data of THCA data has a large amount of censored data, so the regional lymph node involvement of the data volume is analyzed to find the relevant gene panel.The regional lymph node is significant related to the prognosis of THCA.</p>
+<p><b>In this section we try to combine the clinical information to the risk score in three subtypes of THCA(TallCell, Follicular and Classical), the results shows that age and origional lesion together with risk score can be used to predict the lymph node involvement in THCA.</b><p>
+</br>
+<h3>screening for gene panels assocaited with regional lymph node involvement in the classical subtype</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>In statistics and machine learning，the ElasticNet algorithm is a regression analysis method that performs feature selection and regularization (mathematics) simultaneously. The L1 and L2 norms are used as linear regression models for a priori regular training.</p>
+<pElasticNet combines the lasso and ridge regression models with a trade-off between an arbitrary argument or a set of independent variables. In the case where many features are related to each other, Lasso may only randomly consider one of these features, while ElasticNet prefers to select multiple, while ElasticNet inherits the stability of Ridge during the loop.</p>
+<p><b>Methods:</b></p>
+<p>In the Classical subtype, samples were randomly divided into a 70% training set and a 30% validation set. Pre-screening was performed using one-way logistic regression based on differentially expressed genes with a screening criterion of p < 0.1. </p>
+<p>The ElasticNet algorithm was used to select the gene panel associated with lymph node involvement. The sample risk index was calculated based on the selected gene panel, and the ROC curve was drawn.</p>
+<p><b>Conclusion:Through this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement.</b></p>
+<p><b>Results:</b></p>
+<p></p>
+<p align="center"><b>Table:Gene Panel Model</b>(maximim display 100 rows)(<a href="Result/14.GenePanel/Classical/elasticNetPanelScreenResult/model.txt" target="_blank">Table Download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">features</th>
+<th class="sort-string-robust top-header-row ">betainfo</th></tr></thead>
+<tbody>
+<tr>
+<td>(Intercept)</td>
+<td>1.50319622851875</td></tr>
+<tr>
+<td>AANAT</td>
+<td>0.00160823986136717</td></tr>
+<tr>
+<td>ABCG4</td>
+<td>-0.00234453429425903</td></tr>
+<tr>
+<td>ACBD3.AS1</td>
+<td>0.00604930144719051</td></tr>
+<tr>
+<td>ACBD7</td>
+<td>0.000197989290790657</td></tr>
+<tr>
+<td>ACOT11</td>
+<td>-3.63246073650478e-05</td></tr>
+<tr>
+<td>ACSL5</td>
+<td>9.31492813395462e-06</td></tr>
+<tr>
+<td>ACSM5P1</td>
+<td>-0.0889183798262777</td></tr>
+<tr>
+<td>ADAM12</td>
+<td>3.659644728642e-06</td></tr>
+<tr>
+<td>ADGRB3</td>
+<td>0.000923534250714165</td></tr>
+<tr>
+<td>ADH1C</td>
+<td>-0.00500735633606447</td></tr>
+<tr>
+<td>AGT</td>
+<td>3.89681954141497e-06</td></tr>
+<tr>
+<td>AK3P2</td>
+<td>-0.00283158578182562</td></tr>
+<tr>
+<td>AK4P5</td>
+<td>0.0155177698612471</td></tr>
+<tr>
+<td>ALDH3B1</td>
+<td>-4.55020226648829e-05</td></tr>
+<tr>
+<td>ALOX5</td>
+<td>3.96565426596779e-06</td></tr>
+<tr>
+<td>AMTN</td>
+<td>0.000170864172741492</td></tr>
+<tr>
+<td>ANKRD18A</td>
+<td>4.85166955054683e-05</td></tr>
+<tr>
+<td>ANKRD30A</td>
+<td>-0.0660774283584183</td></tr>
+<tr>
+<td>APLNR</td>
+<td>-0.000116355997586284</td></tr>
+<tr>
+<td>APOBEC3B.AS1</td>
+<td>-0.125654893795846</td></tr>
+<tr>
+<td>APOBEC3H</td>
+<td>-0.000549242300687167</td></tr>
+<tr>
+<td>ARF4P2</td>
+<td>-0.0891841630503885</td></tr>
+<tr>
+<td>ARHGAP19</td>
+<td>3.73566511029278e-05</td></tr>
+<tr>
+<td>ARHGEF28</td>
+<td>-8.68248634892652e-05</td></tr>
+<tr>
+<td>ARSJ</td>
+<td>-0.000100541927062941</td></tr>
+<tr>
+<td>ATP4A</td>
+<td>0.000795671245440528</td></tr>
+<tr>
+<td>BANCR</td>
+<td>0.00563766486849896</td></tr>
+<tr>
+<td>BASP1</td>
+<td>-3.40503366716178e-06</td></tr>
+<tr>
+<td>BFSP2</td>
+<td>-0.00106079881788425</td></tr>
+<tr>
+<td>BMP5</td>
+<td>-0.00195668875260091</td></tr>
+<tr>
+<td>BMPR1AP1</td>
+<td>-0.00289285542014243</td></tr>
+<tr>
+<td>BNIP3P15</td>
+<td>6.53923973430885e-06</td></tr>
+<tr>
+<td>BNIP3P34</td>
+<td>-0.0188955983103557</td></tr>
+<tr>
+<td>BPIFB9P</td>
+<td>2.81620086248888e-05</td></tr>
+<tr>
+<td>BRD9P2</td>
+<td>0.00206201820995818</td></tr>
+<tr>
+<td>BRINP2</td>
+<td>6.08526162754157e-05</td></tr>
+<tr>
+<td>BRSK2</td>
+<td>0.00213101658616193</td></tr>
+<tr>
+<td>C11orf52</td>
+<td>-0.0151420341913969</td></tr>
+<tr>
+<td>C22orf15</td>
+<td>-0.00751537298344253</td></tr>
+<tr>
+<td>C2orf73</td>
+<td>0.00187338630322887</td></tr>
+<tr>
+<td>C3orf84</td>
+<td>-0.00605570611616108</td></tr>
+<tr>
+<td>C4orf45</td>
+<td>-0.00918639489623301</td></tr>
+<tr>
+<td>C9orf24</td>
+<td>-0.00569861760854304</td></tr>
+<tr>
+<td>CAB39P1</td>
+<td>0.046623284141769</td></tr>
+<tr>
+<td>CAPN3</td>
+<td>0.000337447078756416</td></tr>
+<tr>
+<td>CATSPERB</td>
+<td>-0.000305391210189428</td></tr>
+<tr>
+<td>CBLN1</td>
+<td>2.07788444104822e-05</td></tr>
+<tr>
+<td>CCDC173</td>
+<td>0.000493858102942739</td></tr>
+<tr>
+<td>CCDC39.AS1</td>
+<td>-0.0538144707568172</td></tr>
+<tr>
+<td>CD44.AS1</td>
+<td>9.58670421137631e-05</td></tr>
+<tr>
+<td>CDC42EP3</td>
+<td>-3.57996289427684e-05</td></tr>
+<tr>
+<td>CDH17</td>
+<td>0.00125178318042714</td></tr>
+<tr>
+<td>CDH19</td>
+<td>0.0011286132242681</td></tr>
+<tr>
+<td>CDH6</td>
+<td>-3.28853552305749e-06</td></tr>
+<tr>
+<td>CDK2AP2P2</td>
+<td>0.000805657125332017</td></tr>
+<tr>
+<td>CDKN2B</td>
+<td>-9.11685776821791e-06</td></tr>
+<tr>
+<td>CEP164P1</td>
+<td>-0.0461462755948503</td></tr>
+<tr>
+<td>CFAP206</td>
+<td>0.0137295315547719</td></tr>
+<tr>
+<td>CFAP45</td>
+<td>-0.000278308452366852</td></tr>
+<tr>
+<td>CFAP74</td>
+<td>-0.00199210913665066</td></tr>
+<tr>
+<td>CHIAP2</td>
+<td>-0.00344422638982357</td></tr>
+<tr>
+<td>CISTR</td>
+<td>-0.0145425225798453</td></tr>
+<tr>
+<td>COL13A1</td>
+<td>9.8825159394051e-05</td></tr>
+<tr>
+<td>COL2A1</td>
+<td>0.00234921385812544</td></tr>
+<tr>
+<td>COL4A6</td>
+<td>3.08803383260655e-05</td></tr>
+<tr>
+<td>CORO2B</td>
+<td>0.000159392972691953</td></tr>
+<tr>
+<td>COX4I2</td>
+<td>-0.000463007916962853</td></tr>
+<tr>
+<td>COX6CP2</td>
+<td>0.00875491519037014</td></tr>
+<tr>
+<td>CRCT1</td>
+<td>0.00146020289544302</td></tr>
+<tr>
+<td>CRYBG2</td>
+<td>-0.00028298026192401</td></tr>
+<tr>
+<td>CSGALNACT1</td>
+<td>2.62220260640775e-05</td></tr>
+<tr>
+<td>CSTP1</td>
+<td>-0.0485561082046444</td></tr>
+<tr>
+<td>CTAGE3P</td>
+<td>-0.0124929624377917</td></tr>
+<tr>
+<td>CTSLP1</td>
+<td>-0.0152521173591843</td></tr>
+<tr>
+<td>CXCL5</td>
+<td>6.52961231520898e-05</td></tr>
+<tr>
+<td>CYP21A1P</td>
+<td>0.000502053252782826</td></tr>
+<tr>
+<td>CYP26C1</td>
+<td>0.00555160278414974</td></tr>
+<tr>
+<td>CYP4A22.AS1</td>
+<td>0.00636843912853098</td></tr>
+<tr>
+<td>DBX2</td>
+<td>-0.00473712837002131</td></tr>
+<tr>
+<td>DCLK3</td>
+<td>-0.000743786839506883</td></tr>
+<tr>
+<td>DCTN1.AS1</td>
+<td>0.000147088923815123</td></tr>
+<tr>
+<td>DDX25</td>
+<td>0.000989028630747295</td></tr>
+<tr>
+<td>DENND6A</td>
+<td>5.39540936665738e-05</td></tr>
+<tr>
+<td>DIO2</td>
+<td>-9.48288025273191e-07</td></tr>
+<tr>
+<td>DIRAS1</td>
+<td>0.000626332434702657</td></tr>
+<tr>
+<td>DIRC3.AS1</td>
+<td>-0.000879356373914858</td></tr>
+<tr>
+<td>DNAH8</td>
+<td>-0.000791956059600579</td></tr>
+<tr>
+<td>DNALI1</td>
+<td>6.37104765211542e-06</td></tr>
+<tr>
+<td>DOCK9.AS1</td>
+<td>-0.335069893795473</td></tr>
+<tr>
+<td>DPPA2P4</td>
+<td>-0.000915057682757539</td></tr>
+<tr>
+<td>DPPA5P4</td>
+<td>-0.00549538672228898</td></tr>
+<tr>
+<td>DPY19L2P2</td>
+<td>0.000353326971403161</td></tr>
+<tr>
+<td>DRC7</td>
+<td>-0.000230994307078872</td></tr>
+<tr>
+<td>DRD2</td>
+<td>0.00331101740061419</td></tr>
+<tr>
+<td>DUSP13</td>
+<td>0.00196603642114411</td></tr>
+<tr>
+<td>DUXAP8</td>
+<td>0.000344949051577101</td></tr>
+<tr>
+<td>DYDC1</td>
+<td>-0.156206663154312</td></tr>
+<tr>
+<td>E2F3P2</td>
+<td>0.0140257769284849</td></tr>
+<tr>
+<td>EDARADD</td>
+<td>9.0373926506802e-05</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p><b>features:</b>gene panel model parameters</p>
+<p><b>betainfo:</b>factor coefficient</p>
+<p><b>The risk index classification threshold is:</b>-0.0752753824594341</p>
+<p></p>
+</br>
+<p align="center"><b>Figure: Risk Score ROC Curve</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/Classical/elasticNetPanelScreenResult/risk_score_roc.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/Classical/elasticNetPanelScreenResult/risk_score_roc.pdf" target="_blank" >Figure Download:Risk Score ROC Curve</a></li></ul></div></div></br>
+<p><b>Legend:</b>The horizontal axis is the false positive rate FP and the vertical axis is the true positive rate TP. The blue line is the training set curve and the green line is the verification set curve. The lower left corner corresponds to the AUC value of the two ROC curves.。</p>
+</br>
+<h3>Correlation analysis of gene and lymph node involvement in classical subtype</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>For the regional lymph node involvement related gene panel obtained above, we combined the clinical information of the sample and combined with the reliability of the gene panel.</p>
+<p><b>Method:</b></p>
+<p>In the Classical subtype, samples were randomly divided into a 70% training set and a 30% validation set. Based on the above calculated risk index and clinical information of the sample (age, immune index, primary lesion), the single-factor logistic regression was used for pre-screening, and the screening criteria was p < 0.1.</p>
+<p>The ElasticNet algorithm was used to calculate the influencing factors associated with lymph node involvement. According to the influencing factor model obtained by screening, the sample risk index is calculated and the ROC curve is drawn.</p>
+<p><b>Conclusion:Through this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement, but the lymph node involvement can be accurately determined in combination with the original lesion.</b></p>
+<p><b>Results:</b></p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Classical subtype risk index and clinical information table</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/Classical/ClinicStat/PDF/socre.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/Classical/ClinicStat/PDF/socre.pdf" target="_blank" >Figure Download:Classical subtype risk index and clinical information table</a></li></ul></div></div></br>
+<p><b>Legend:</b></p>
+<p><b>1st line:</b>sample classification</p>
+<p><b>3rd column:</b>classification of (high) phenotypic classification information</p>
+<p><b>4th column:</b> classification (low) phenotypic classification information statistics</p>
+<p><b>5th column:</b>P-value, yellow indicates that the P value is small, the result is significant</p>
+<p><b>6th column:</b>Algotithm</p>
+<p></p>
+<p align="center"><b>Table:Influencing factor model related to lymph node involvement</b>(maximum display 100 lines)(<a href="Result/14.GenePanel/Classical/clinical.elasticNetPanelScreenResult/model.txt" target="_blank">form download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">features</th>
+<th class="sort-string-robust top-header-row ">betainfo</th></tr></thead>
+<tbody>
+<tr>
+<td>(Intercept)</td>
+<td>-0.168468890984348</td></tr>
+<tr>
+<td>score</td>
+<td>2.38173710696615</td></tr>
+<tr>
+<td>T</td>
+<td>0.180705454965002</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p><b>features:</b>model contains factors</p>
+<p><b>betainfo:</b>factor coefficient</p>
+<p><b>Classification threshold:</b>-0.10731407047899</p>
+<p></p>
+</br>
+<p align="center"><b>Figure: ROC curve of influencing factors related to lymph node involvement</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/Classical/clinical.elasticNetPanelScreenResult/risk_score_roc.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/Classical/clinical.elasticNetPanelScreenResult/risk_score_roc.pdf" target="_blank" >Figure download:ROC curve of influencing factors related to lymph node involvement</a></li></ul></div></div></br>
+<p><b>Legend:</b>The horizontal axis is the false positive rate FP and the vertical axis is the true positive rate TP. The blue line is the training set curve and the green line is the verification set curve. The lower left corner corresponds to the AUC value of the two ROC curves.</p>
+<p><b>Conclusion:Through this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement.</b></p>
+<p></p>
+</br>
+<h3>Screening of gene panels associated with regional lymph node involvement in Follicular subtypes</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>In statistics and machine learning, the ElasticNet algorithm is a regression analysis method that performs feature selection and regularization (mathematics) simultaneously. The L1 and L2 norms are used as linear regression models for a priori regular training.</p>
+<p>ElasticNet combines the lasso and ridge regression models with a trade-off between an arbitrary argument or a set of independent variables. In the case where many features are related to each other, Lasso may only randomly consider one of these features, while ElasticNet prefers to select multiple, while ElasticNet inherits the stability of Ridge during the loop.</p>
+<p><b>Methods:</b></p>
+<p>In the Follicular subtype, samples were randomly divided into a 70% training set and a 30% validation set. Pre-screening was performed using one-way logistic regression based on differentially expressed genes with a screening criterion of p < 0.1.</p>
+<p>The ElasticNet algorithm was used to select the gene panel associated with lymph node involvement. The sample risk index was calculated based on the selected gene panel, and the ROC curve was drawn.</p>
+<p><b>Conclusion:Through this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement, but the lymph node involvement can be accurately determined in combination with the patient's age.</b></p>
+<p><b>Results:</b></p>
+<p></p>
+<p align="center"><b>Table:Gene panel model</b>(maximum display 100 rows)(<a href="Result/14.GenePanel/Follicular/elasticNetPanelScreenResult/model.txt" target="_blank">Table download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">features</th>
+<th class="sort-string-robust top-header-row ">betainfo</th></tr></thead>
+<tbody>
+<tr>
+<td>(Intercept)</td>
+<td>-2.86112853277648</td></tr>
+<tr>
+<td>ABCC8</td>
+<td>-1.99463797277162e-06</td></tr>
+<tr>
+<td>ACY3</td>
+<td>0.000154853587948176</td></tr>
+<tr>
+<td>AMBP</td>
+<td>-2.44433629568914e-06</td></tr>
+<tr>
+<td>ANKS1B</td>
+<td>-0.000162110924781417</td></tr>
+<tr>
+<td>ARHGAP23</td>
+<td>-1.07602307430222e-06</td></tr>
+<tr>
+<td>ART2P</td>
+<td>-0.00484369837525926</td></tr>
+<tr>
+<td>B3GNT3</td>
+<td>7.93339702476316e-06</td></tr>
+<tr>
+<td>C1orf185</td>
+<td>0.0728977591531242</td></tr>
+<tr>
+<td>CACNG4</td>
+<td>9.78301719207186e-05</td></tr>
+<tr>
+<td>CACNG8</td>
+<td>-0.00551221128866359</td></tr>
+<tr>
+<td>CAPN14</td>
+<td>0.0280349893412067</td></tr>
+<tr>
+<td>CBLN1</td>
+<td>6.52481928004609e-06</td></tr>
+<tr>
+<td>CCR12P</td>
+<td>0.0111058603100927</td></tr>
+<tr>
+<td>CDKN2C</td>
+<td>2.53730100748291e-05</td></tr>
+<tr>
+<td>CFAP43</td>
+<td>-0.000167627535153411</td></tr>
+<tr>
+<td>CHST9</td>
+<td>-0.030560450660578</td></tr>
+<tr>
+<td>CIDEA</td>
+<td>-0.0169538237831924</td></tr>
+<tr>
+<td>CLDN10</td>
+<td>1.1271253961654e-05</td></tr>
+<tr>
+<td>CNTN4.AS1</td>
+<td>-0.00523419199947478</td></tr>
+<tr>
+<td>COX20P2</td>
+<td>0.00242038588451204</td></tr>
+<tr>
+<td>CYS1</td>
+<td>5.67526321623596e-06</td></tr>
+<tr>
+<td>DAND5</td>
+<td>-0.000628162561978519</td></tr>
+<tr>
+<td>DLL3</td>
+<td>-2.15671500397211e-05</td></tr>
+<tr>
+<td>DMP1</td>
+<td>0.00087435528954365</td></tr>
+<tr>
+<td>EMX2OS</td>
+<td>0.00535469572976598</td></tr>
+<tr>
+<td>ERVV.1</td>
+<td>0.00222960155469237</td></tr>
+<tr>
+<td>ERVV.2</td>
+<td>0.00136124492658223</td></tr>
+<tr>
+<td>FAM181A.AS1</td>
+<td>-0.00184029817686806</td></tr>
+<tr>
+<td>FAM205C</td>
+<td>0.0130075032901107</td></tr>
+<tr>
+<td>FAR2P1</td>
+<td>-0.00342116525791291</td></tr>
+<tr>
+<td>FBXW10</td>
+<td>-0.00257172415460616</td></tr>
+<tr>
+<td>FNDC10</td>
+<td>-5.47133761845665e-05</td></tr>
+<tr>
+<td>G6PC</td>
+<td>-0.0358780919498074</td></tr>
+<tr>
+<td>GABRR1</td>
+<td>0.0202068163613048</td></tr>
+<tr>
+<td>GATA4</td>
+<td>0.011405422749071</td></tr>
+<tr>
+<td>GFRA3</td>
+<td>-0.00443948508896478</td></tr>
+<tr>
+<td>GLP1R</td>
+<td>7.93769269585096e-05</td></tr>
+<tr>
+<td>GLRA3</td>
+<td>0.0893499364769791</td></tr>
+<tr>
+<td>GPM6A</td>
+<td>-3.0727727816417e-05</td></tr>
+<tr>
+<td>HAND2</td>
+<td>0.00202173220651656</td></tr>
+<tr>
+<td>HSD17B3.AS1</td>
+<td>-0.00135384479195187</td></tr>
+<tr>
+<td>HTRA3</td>
+<td>5.1722502712921e-05</td></tr>
+<tr>
+<td>IGFBP2</td>
+<td>2.7357786561217e-05</td></tr>
+<tr>
+<td>IGFBPL1</td>
+<td>-0.000123536871894952</td></tr>
+<tr>
+<td>IGHJ2P</td>
+<td>0.00186288281272863</td></tr>
+<tr>
+<td>INSYN1.AS1</td>
+<td>0.457825508719641</td></tr>
+<tr>
+<td>IVL</td>
+<td>0.00020682117945141</td></tr>
+<tr>
+<td>KIF28P</td>
+<td>-0.00663556710551919</td></tr>
+<tr>
+<td>KRT18P65</td>
+<td>0.00478489215431665</td></tr>
+<tr>
+<td>KRT6B</td>
+<td>0.00617854728335103</td></tr>
+<tr>
+<td>LEMD1</td>
+<td>-3.98984747704843e-05</td></tr>
+<tr>
+<td>LINC00460</td>
+<td>0.000102758658299394</td></tr>
+<tr>
+<td>LINC00668</td>
+<td>0.263808234247386</td></tr>
+<tr>
+<td>LINC00887</td>
+<td>5.4994373075384e-05</td></tr>
+<tr>
+<td>LINC00891</td>
+<td>0.000783822012815152</td></tr>
+<tr>
+<td>LINC01444</td>
+<td>-0.000447608462295796</td></tr>
+<tr>
+<td>LINC01531</td>
+<td>-0.0319892492766913</td></tr>
+<tr>
+<td>LINC01567</td>
+<td>-0.0799501207800881</td></tr>
+<tr>
+<td>LINC01645</td>
+<td>0.00996789475014735</td></tr>
+<tr>
+<td>LINC01736</td>
+<td>0.00215246516802127</td></tr>
+<tr>
+<td>LINC02015</td>
+<td>-0.0127153173234212</td></tr>
+<tr>
+<td>LINC02332</td>
+<td>0.00561935550884866</td></tr>
+<tr>
+<td>LINC02407</td>
+<td>0.0156708755156975</td></tr>
+<tr>
+<td>LINGO3</td>
+<td>-0.00271224695705128</td></tr>
+<tr>
+<td>MATN2</td>
+<td>-2.87061715491386e-08</td></tr>
+<tr>
+<td>MGAT3</td>
+<td>1.03277199133646e-06</td></tr>
+<tr>
+<td>MIR3164</td>
+<td>0.247838358251721</td></tr>
+<tr>
+<td>MIR4697HG</td>
+<td>-8.53982751981059e-05</td></tr>
+<tr>
+<td>MIR548AA2</td>
+<td>-0.0400068278812235</td></tr>
+<tr>
+<td>MTCYBP19</td>
+<td>0.0658832048350789</td></tr>
+<tr>
+<td>MYT1L</td>
+<td>-0.00650184292838367</td></tr>
+<tr>
+<td>NDUFB4P11</td>
+<td>0.00204565388254636</td></tr>
+<tr>
+<td>NECAB1</td>
+<td>-0.000172459202692488</td></tr>
+<tr>
+<td>NIM1K</td>
+<td>-0.000237585705284061</td></tr>
+<tr>
+<td>NSG2</td>
+<td>-0.00035112384600754</td></tr>
+<tr>
+<td>OLAH</td>
+<td>6.88836884429003e-05</td></tr>
+<tr>
+<td>PALM2</td>
+<td>-0.000959808657649197</td></tr>
+<tr>
+<td>PCDH10</td>
+<td>0.00119231324481587</td></tr>
+<tr>
+<td>PENK</td>
+<td>0.000628717906446219</td></tr>
+<tr>
+<td>PHACTR3</td>
+<td>0.000316326429448323</td></tr>
+<tr>
+<td>PIH1D3</td>
+<td>-0.0071731197478557</td></tr>
+<tr>
+<td>PLA2G2E</td>
+<td>0.000833338215574955</td></tr>
+<tr>
+<td>PLXNC1</td>
+<td>-6.51503011549587e-06</td></tr>
+<tr>
+<td>PRTG</td>
+<td>-8.13599408794659e-06</td></tr>
+<tr>
+<td>RAET1E</td>
+<td>0.000126971273470179</td></tr>
+<tr>
+<td>RBAKDN</td>
+<td>-0.0217496131602254</td></tr>
+<tr>
+<td>RBFOX1</td>
+<td>3.57748657962507e-06</td></tr>
+<tr>
+<td>RETN</td>
+<td>0.000816732184065921</td></tr>
+<tr>
+<td>RHAG</td>
+<td>0.308347079085323</td></tr>
+<tr>
+<td>RHBDL1</td>
+<td>-0.00134946296718987</td></tr>
+<tr>
+<td>RNF223</td>
+<td>0.00238277411983648</td></tr>
+<tr>
+<td>RPL18P10</td>
+<td>-0.0190375605388415</td></tr>
+<tr>
+<td>RPL23AP49</td>
+<td>-0.00028603458503974</td></tr>
+<tr>
+<td>RPRML</td>
+<td>0.0145161610553818</td></tr>
+<tr>
+<td>SCEL</td>
+<td>1.33594365162791e-06</td></tr>
+<tr>
+<td>SFN</td>
+<td>1.64777629525577e-05</td></tr>
+<tr>
+<td>SIGLEC15</td>
+<td>0.00010006241251635</td></tr>
+<tr>
+<td>SLC25A47P1</td>
+<td>0.000152990143584955</td></tr>
+<tr>
+<td>SLC25A48</td>
+<td>0.000184562145716528</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p><b>features:</b>gene panel model parameters</p>
+<p><b>betainfo:</b>factor coefficient</p>
+<p><b>The risk score threshold:</b>0.793613849621813</p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Risk score ROC curve</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/Follicular/elasticNetPanelScreenResult/risk_score_roc.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/Follicular/elasticNetPanelScreenResult/risk_score_roc.pdf" target="_blank" >Figure download:Risk score ROC curve</a></li></ul></div></div></br>
+<p><b>Legend:</b>The horizontal axis is the false positive rate FP and the vertical axis is the true positive rate TP. The blue line is the training set curve and the green line is the verification set curve. The lower left corner corresponds to the AUC value of the two ROC curves.</p>
+</br>
+<h3>Correlation analysis between gene panel related to lymph node involvement in follicular subtpe and clinical information</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>For the regional lymph node involvement related gene panel obtained above, we combined the clinical information of the sample and combined with the reliability of the gene panel.</p>
+<p><b>Methods:</b></p>
+<p>In the Follicular subtype, samples were randomly divided into a 70% training set and a 30% validation set. Based on the above calculated risk index and clinical information of the sample (age, immune index, primary lesion), the single-factor logistic regression was used for pre-screening, and the screening criteria was p < 0.1.</p>
+<p>The ElasticNet algorithm was used to calculate the influencing factors associated with lymph node involvement. According to the influencing factor model obtained by screening, the sample risk index is calculated and the ROC curve is drawn.</p>
+<p><b>Conclusion:Through this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement, but the lymph node involvement can be accurately determined in combination with the original lesion.</b></p>
+<p><b>Results:</b></p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Follicular subtype risk score and clinical information data</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/Follicular/ClinicStat/PDF/socre.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/Follicular/ClinicStat/PDF/socre.pdf" target="_blank" >Figure download:Follicular subtype risk score and clinical information data</a></li></ul></div></div></br>
+<p><b>Legend:</b></p>
+<p><b>1st row:</b>sample classification</p>
+<p><b>1st column:</b>sample phenotype</p>
+<p><b>3rd column:</b>classification of high phenotypic classification information</p>
+<p><b>4th column:</b>classification of low phenotypic classification information</p>
+<p><b>5th column:</b>P-value，yellow indicated that P value is small,the result is significant</p>
+<p><b>6th column:</b>Algorithm</p>
+<p></p>
+<p align="center"><b>Table:Inflencing factor model related to lymph node involvement</b>(maximum display 100 rows)(<a href="Result/14.GenePanel/Follicular/clinical.elasticNetPanelScreenResult/model.txt" target="_blank">Table download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">features</th>
+<th class="sort-string-robust top-header-row ">betainfo</th></tr></thead>
+<tbody>
+<tr>
+<td>(Intercept)</td>
+<td>-0.0709668739433544</td></tr>
+<tr>
+<td>score</td>
+<td>2.1241394644772</td></tr>
+<tr>
+<td>age</td>
+<td>-0.0553602398130572</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p><b>features:</b>model contains factors</p>
+<p><b>betainfo:</b>factor coefficient</p>
+<p><b>the classification threshold is:</b>0.827805181657604</p>
+<p></p>
+</br>
+<p align="center"><b>Figure:ROC curve of risk factor related to lymph node involvement</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/Follicular/clinical.elasticNetPanelScreenResult/risk_score_roc.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/Follicular/clinical.elasticNetPanelScreenResult/risk_score_roc.pdf" target="_blank" >Figure download:ROC curve of risk factor related to lymph node involvement</a></li></ul></div></div></br>
+<p><b>Legend:</b>The horizontal axis is the false positive rate FP and the vertical axis is the true positive rate TP. The blue line is the training set curve and the green line is the verification set curve. The lower left corner corresponds to the AUC value of the two ROC curves.</p>
+<p><b>Conclusion:Through this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement.</b></p>
+</br>
+<h3>Screening of gene panels associated with regional lymph node involvement in the TallCell subtype</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>In statistics and machine learning, the ElasticNet algorithm is a regression analysis method that performs feature selection and regularization (mathematics) simultaneously. The L1 and L2 norms are used as linear regression models for a priori regular training.</p>
+<p>ElasticNet combines the lasso and ridge regression models with a trade-off between an arbitrary argument or a set of independent variables. In the case where many features are related to each other, Lasso may only randomly consider one of these features, while ElasticNet prefers to select multiple, while ElasticNet inherits the stability of Ridge during the loop.</p>
+<p><b>Methods:</b></p>
+<p>In the TallCell subtype, samples were randomly divided into a 70% training set and a 30% validation set. Pre-screening was performed using one-way logistic regression based on differentially expressed genes with a screening criterion of p < 0.1.</p>
+<p>The ElasticNet algorithm was used to select the gene panel associated with lymph node involvement. The sample risk index was calculated based on the selected gene panel, and the ROC curve was drawn.</p>
+<p><b>Results:</b></p>
+<p></p>
+<p align="center"><b>Table:Gene panel model</b>(maximum display 100 rows)(<a href="Result/14.GenePanel/TallCell/elasticNetPanelScreenResult/model.txt" target="_blank">Table download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">features</th>
+<th class="sort-string-robust top-header-row ">betainfo</th></tr></thead>
+<tbody>
+<tr>
+<td>(Intercept)</td>
+<td>-5.89010666468145</td></tr>
+<tr>
+<td>ACTP1</td>
+<td>-0.0233474092988072</td></tr>
+<tr>
+<td>ADH6</td>
+<td>0.0123102533776842</td></tr>
+<tr>
+<td>ALDH1A3</td>
+<td>4.29393353821258e-05</td></tr>
+<tr>
+<td>ALOX15B</td>
+<td>-5.9153786466385e-07</td></tr>
+<tr>
+<td>AMIGO2</td>
+<td>3.41092087785205e-05</td></tr>
+<tr>
+<td>ANK3</td>
+<td>1.82265154795852e-07</td></tr>
+<tr>
+<td>ANKRD37</td>
+<td>9.11850997396331e-05</td></tr>
+<tr>
+<td>ARHGAP19.SLIT1</td>
+<td>0.00269268147900416</td></tr>
+<tr>
+<td>ARPC3P5</td>
+<td>0.0153218624640754</td></tr>
+<tr>
+<td>ATP1B3.AS1</td>
+<td>0.0012448489507542</td></tr>
+<tr>
+<td>AURKAP1</td>
+<td>0.0340320231165217</td></tr>
+<tr>
+<td>BMPR1AP1</td>
+<td>0.00190019103379966</td></tr>
+<tr>
+<td>BMS1P8</td>
+<td>0.0391864331365916</td></tr>
+<tr>
+<td>C10orf95</td>
+<td>4.42482546566431e-05</td></tr>
+<tr>
+<td>C9orf43</td>
+<td>0.000541005081595503</td></tr>
+<tr>
+<td>CACNA2D1</td>
+<td>4.94878167324554e-05</td></tr>
+<tr>
+<td>CADM3</td>
+<td>-0.000107763545298038</td></tr>
+<tr>
+<td>CASC15</td>
+<td>8.38834493152058e-05</td></tr>
+<tr>
+<td>CCDC163</td>
+<td>-0.00187231115661</td></tr>
+<tr>
+<td>CCDC38</td>
+<td>0.0292404788331085</td></tr>
+<tr>
+<td>CCDC54</td>
+<td>0.0265477550080937</td></tr>
+<tr>
+<td>CCDC65</td>
+<td>0.000875381413940779</td></tr>
+<tr>
+<td>CCNL2P1</td>
+<td>-0.185886606841554</td></tr>
+<tr>
+<td>CKS1BP1</td>
+<td>0.00160353589792665</td></tr>
+<tr>
+<td>CLVS1</td>
+<td>0.00183371330562023</td></tr>
+<tr>
+<td>CSAG1</td>
+<td>0.00245385606068552</td></tr>
+<tr>
+<td>CST1</td>
+<td>-0.000540135876620184</td></tr>
+<tr>
+<td>CST5</td>
+<td>-0.000314593141123414</td></tr>
+<tr>
+<td>CYP51A1P3</td>
+<td>0.0343766996021299</td></tr>
+<tr>
+<td>DAB2IP</td>
+<td>2.31243244063657e-05</td></tr>
+<tr>
+<td>DACT1</td>
+<td>4.30908281309229e-05</td></tr>
+<tr>
+<td>DCTN1.AS1</td>
+<td>0.00050281488973243</td></tr>
+<tr>
+<td>DDN</td>
+<td>0.00630018541769952</td></tr>
+<tr>
+<td>DEUP1</td>
+<td>0.00825910522740515</td></tr>
+<tr>
+<td>DPYSL3</td>
+<td>3.41554175365674e-06</td></tr>
+<tr>
+<td>DRAXIN</td>
+<td>0.000247671630706996</td></tr>
+<tr>
+<td>DYRK3</td>
+<td>7.27181244127886e-06</td></tr>
+<tr>
+<td>ECE1</td>
+<td>6.49298164404534e-07</td></tr>
+<tr>
+<td>EDIL3</td>
+<td>2.16187753438658e-07</td></tr>
+<tr>
+<td>EGLN3P1</td>
+<td>0.100910286413313</td></tr>
+<tr>
+<td>ELOBP1</td>
+<td>-0.0197643330539176</td></tr>
+<tr>
+<td>EPHX4</td>
+<td>0.000267398616705394</td></tr>
+<tr>
+<td>ESM1</td>
+<td>6.85610671486893e-05</td></tr>
+<tr>
+<td>FAM129A</td>
+<td>2.4057544854971e-05</td></tr>
+<tr>
+<td>FAM19A1</td>
+<td>0.0179266289234725</td></tr>
+<tr>
+<td>FAM20A</td>
+<td>2.40106564990294e-06</td></tr>
+<tr>
+<td>FAM81B</td>
+<td>0.000274508771758112</td></tr>
+<tr>
+<td>FBXO41</td>
+<td>6.45128298689954e-05</td></tr>
+<tr>
+<td>FGF10</td>
+<td>0.00145648445706433</td></tr>
+<tr>
+<td>FGF12</td>
+<td>0.000739512356036241</td></tr>
+<tr>
+<td>FHAD1</td>
+<td>0.000488490303547898</td></tr>
+<tr>
+<td>FMN2</td>
+<td>0.00742318725782526</td></tr>
+<tr>
+<td>FOXN4</td>
+<td>0.0550153290284327</td></tr>
+<tr>
+<td>FOXR1</td>
+<td>0.102883107747345</td></tr>
+<tr>
+<td>FREM3</td>
+<td>0.00364039387836966</td></tr>
+<tr>
+<td>GABRA2</td>
+<td>0.0292410668225526</td></tr>
+<tr>
+<td>GABRB2</td>
+<td>4.75280607297235e-07</td></tr>
+<tr>
+<td>GDF3</td>
+<td>0.00206627726903088</td></tr>
+<tr>
+<td>GLIS3</td>
+<td>8.28727346584675e-06</td></tr>
+<tr>
+<td>GNAL</td>
+<td>6.40813570968327e-05</td></tr>
+<tr>
+<td>GOLGA6L7</td>
+<td>0.18061848757143</td></tr>
+<tr>
+<td>GRM5.AS1</td>
+<td>0.014541761315823</td></tr>
+<tr>
+<td>GSTA1</td>
+<td>-0.00940305682005836</td></tr>
+<tr>
+<td>GTF2IP7</td>
+<td>0.000738033237836032</td></tr>
+<tr>
+<td>GTF2IP9</td>
+<td>0.00902309855576815</td></tr>
+<tr>
+<td>HADHAP1</td>
+<td>0.0380460011317094</td></tr>
+<tr>
+<td>HMGN1P8</td>
+<td>0.00300870848823623</td></tr>
+<tr>
+<td>HOXA10</td>
+<td>0.0113225139187265</td></tr>
+<tr>
+<td>HOXA11</td>
+<td>0.00445282301634584</td></tr>
+<tr>
+<td>HOXA7</td>
+<td>0.00481317875262306</td></tr>
+<tr>
+<td>HOXC10</td>
+<td>0.010854916026553</td></tr>
+<tr>
+<td>ID4</td>
+<td>3.17348415147345e-06</td></tr>
+<tr>
+<td>IL17D</td>
+<td>0.000603029592659014</td></tr>
+<tr>
+<td>IL17RD</td>
+<td>4.37804840926512e-05</td></tr>
+<tr>
+<td>IL1RAP</td>
+<td>4.5362523401488e-05</td></tr>
+<tr>
+<td>IL36RN</td>
+<td>-0.000799346813210826</td></tr>
+<tr>
+<td>INHBB</td>
+<td>1.89092459821653e-06</td></tr>
+<tr>
+<td>IQSEC3</td>
+<td>0.000549929540478234</td></tr>
+<tr>
+<td>ITFG1.AS1</td>
+<td>0.0214381609357986</td></tr>
+<tr>
+<td>KCNG3</td>
+<td>0.0366871189056347</td></tr>
+<tr>
+<td>KCNS3</td>
+<td>4.65616939261292e-05</td></tr>
+<tr>
+<td>KIAA0319</td>
+<td>0.00583122555619117</td></tr>
+<tr>
+<td>KIAA0895LP1</td>
+<td>0.0575192865180898</td></tr>
+<tr>
+<td>KIF5C</td>
+<td>0.0017772949122138</td></tr>
+<tr>
+<td>KLHDC8A</td>
+<td>3.61239851542512e-05</td></tr>
+<tr>
+<td>KRT17P8</td>
+<td>-0.19348847040872</td></tr>
+<tr>
+<td>LINC00664</td>
+<td>-0.0027513700480468</td></tr>
+<tr>
+<td>LINC01013</td>
+<td>0.000339094043256418</td></tr>
+<tr>
+<td>LINC01141</td>
+<td>0.0193402127207859</td></tr>
+<tr>
+<td>LINC01213</td>
+<td>0.0374598095157111</td></tr>
+<tr>
+<td>LINC01220</td>
+<td>0.000786870816898426</td></tr>
+<tr>
+<td>LINC01230</td>
+<td>0.0419605863662678</td></tr>
+<tr>
+<td>LINC01337</td>
+<td>0.0134501739250552</td></tr>
+<tr>
+<td>LINC01725</td>
+<td>0.00209580546031662</td></tr>
+<tr>
+<td>LINC01765</td>
+<td>-0.232394947703867</td></tr>
+<tr>
+<td>LINC01788</td>
+<td>0.0165168000186022</td></tr>
+<tr>
+<td>LINC01806</td>
+<td>0.000116256912421586</td></tr>
+<tr>
+<td>LINC01869</td>
+<td>-0.000119524633156987</td></tr>
+<tr>
+<td>LINC02538</td>
+<td>0.0481514214983697</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p><b>features:</b>gene panel model parameters</p>
+<p><b>betainfo:</b>factor coefficient</p>
+<p><b>the risk index classification threshold is:</b>-0.344908177200473</p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Risk index ROC curve</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/TallCell/elasticNetPanelScreenResult/risk_score_roc.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/TallCell/elasticNetPanelScreenResult/risk_score_roc.pdf" target="_blank" >Figure download:Risk index ROC curve</a></li></ul></div></div></br>
+<p><b>Legend:</b>The horizontal axis is the false positive rate FP and the vertical axis is the true positive rate TP. The blue line is the training set curve and the green line is the verification set curve. The lower left corner corresponds to the AUC value of the two ROC curves.</p>
+</br>
+<h3>Correlation analysis between gene panel related to TallCell subtype regional lymph node involvement and clinical information
+</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>For the regional lymph node involvement related gene panel obtained above, we combined the clinical information of the sample and combined with the reliability of the gene panel.</p>
+<p><b>Methods:</b></p>
+<p>In the TallCell subtype, samples were randomly divided into a 60% training set and a 40% validation set. Based on the above calculated risk index and clinical information of the sample (age, immune index, primary lesion), the single-factor logistic regression was used for pre-screening, and the screening criteria was p < 0.1.</p>
+<p>The ElasticNet algorithm was used to calculate the influencing factors associated with lymph node involvement. According to the influencing factor model obtained by screening, the sample risk index is calculated and the ROC curve is drawn.</p>
+<p><b>From this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement, but the lymph node involvement can be more accurately determined by the age of the patient.</b></p>
+<p><b>Conclusion:Through this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement, but the lymph node involvement can be accurately determined in combination with the patient's age.</b></p>
+<p><b>Results:</b></p>
+<p></p>
+</br>
+<p align="center"><b>Figure:TallCell subtype risk index and clinical information table</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/TallCell/ClinicStat/PDF/score.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/TallCell/ClinicStat/PDF/score.pdf" target="_blank" >Figure download:TallCell subtype risk index and clinical information table</a></li></ul></div></div></br>
+<p><b>Legend:</b></p>
+<p><b>1st line:</b>sample classification</p>
+<p><b>3rd column:</b>classification of (high) phenotypic classification information</p>
+<p><b>4th column:</b> classification (low) phenotypic classification information statistics</p>
+<p><b>5th column:</b>P-value, yellow indicates that the P value is small, the result is significant</p>
+<p><b>6th column:</b>Algotithm</p>
+<p></p>
+<p align="center"><b>Table:Influencing factors model related to lymph node involvement</b>(maximum display 100 rows)(<a href="Result/14.GenePanel/TallCell/clinical.elasticNetPanelScreenResult/model.txt" target="_blank">Table download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">features</th>
+<th class="sort-string-robust top-header-row ">betainfo</th></tr></thead>
+<tbody>
+<tr>
+<td>(Intercept)</td>
+<td>4.76221905972103</td></tr>
+<tr>
+<td>score</td>
+<td>2.05372651184354</td></tr>
+<tr>
+<td>age</td>
+<td>-0.0625214414393215</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p><b>features:</b>factors</p>
+<p><b>betainfo:</b>factor coefficient</p>
+<p><b>The classification threshold is:</b>0.00455825900212742</p>
+<p></p>
+</br>
+<p align="center"><b>Figure:ROC curve of influencing factors related to lymph node involvement</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/14.GenePanel/TallCell/clinical.elasticNetPanelScreenResult/risk_score_roc.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/14.GenePanel/TallCell/clinical.elasticNetPanelScreenResult/risk_score_roc.pdf" target="_blank" >Figure download:ROC curve of influencing factors related to lymph node involvement</a></li></ul></div></div></br>
+<p><b>Legend:</b>The horizontal axis is the false positive rate FP and the vertical axis is the true positive rate TP. The blue line is the training set curve and the green line is the verification set curve. The lower left corner corresponds to the AUC value of the two ROC curves.</p>
+<p><b>From this result, we can find that the selected gene panel alone can be used to judge the accuracy of lymph node involvement, but the lymph node involvement can be more accurately determined by the age of the patient.</b></p>
+<p></p>
+
+
+			</div>
+		</div>	
+    </div>
+
+<nav class="navbar navbar-default">
+	<div class="navbar-inner navbar-content-center">
+		<p class="text-muted credit" style="padding: 10px;" align="center"><a href="javascript:scroll(0,0)"><font size="4">>>Back to Top<<</font></a></p>
+	</div>
+</nav>
+
+	<div id="footer" class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-inner navbar-content-center">
+			</div>
+		</nav>
+	</div>
+</body>
+</html>

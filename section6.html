@@ -1,0 +1,4327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="./library/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <br>
+            </div>
+            <div class="col-md-9">
+                <h2 align="center">Papillary Thyroid Carcinoma related diagnostic biomarker target development and targeted drug selection </h2>
+                <h4 align="center">Author: Qianhui Yang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Research use only</h4>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-3" >
+                <div class="navbar navbar-default" role="navigation">
+                    <ul class="nav">
+                        <li><a href="section1.html">1.Intro(Introduction)</a></li>
+                        <li><a href="section2.html">2.Query(Genetic expression and clinical data from TCGA)</a></li>
+                        <li><a href="section3.html">3.DifGene(Screening differentially expressed genes of each subtype)</a></li>
+                        <li><a href="section4.html">4.seriescluster(Analyzing the differentially expressed genes of each subtype distinguished from other subtypes)</a></li>
+                        <li><a href="section5.html">5.Boxplot(DEG box plot)</a></li>
+                        <li><a href="section6.html">6.GOPathway(DEG KEGG and GO analysis)</a></li>
+                        <li><a href="section7.html">7.Mutation(analysis of the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section8.html">8.expressinmutdrivergene(analysis od the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section9.html">9.Stargene(specific gene and immune correlation analysis of each subtype)</a></li>
+                        <li><a href="section10.html">10.ImmuneScore(analysis of the correlation between specific genes and immune index and immune cell abundance of each subtype)</a></li>
+                        <li><a href="section11.html">11.GenePanel(screening  survival-related gene panels in the classical subtype)</a></li>
+                        <li><a href="section12.html">12.GenePanel(screening the gene panel associated with lymph node involvement in each subtype)</a></li>
+                        <li><a href="section13.html">13.GeneSelect(the status of each subtype screening gene)</a></li>
+                        <li><a href="section14.html">14.Cmap(analysis of the correlation between genes associated with lymph node involvement in various subtype)</a></li>
+                        <li><a href="section15.html">15.Tool(software and database)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                </br>
+<h3>GO analysis of DSTEGs</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p><b>Method:</b></p>
+<p>The differential genes obtained by the analysis are based on the GO annotations of the GO database from the three levels of BP(biological process), MF(molecular function), and CC(cellular component), and all the GOs in which the genes participate are obtained. The significance level (P-Value) of each GO was calculated by Fisher's test to screen out significant GOs with differential genes and negative correlation genes. Among them, the significant P-Value <0.01 is indicated by a yellow table.
+</p>
+<p><b>Conclusion:</b></p>
+<p>THCA <b>Follicular</b> DSTEGs are enriched in complement activation, regulation of immune response, complement activation of classical pathways etc.；</p>
+<p>THCA <b>TallCell</b> DSTEGs are enriched in muscle organ development, extracellular matrix organization, negative regulation of metanepheric glomerular mesengial cell proliferation etc.；</p>
+<p>THCA <b>Classical</b >DSTEGs are enriched in proteolysis, nitrate transport, glycerol transport etc.</p>
+<p><b>Results:</b></p>
+<p><b>GO Analysis</b></p>
+<p></p>
+</br>
+<p align="center"><b>Image:Follicular</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/GOAnalysis_result/Follicular.GO-Analysis-Log10P_All.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/GOAnalysis_result/Follicular.GO-Analysis-Log10P_All.png" target="_blank" >Image download:Follicular</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:TallCell</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/GOAnalysis_result/TallCell.GO-Analysis-Log10P_All.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/GOAnalysis_result/TallCell.GO-Analysis-Log10P_All.png" target="_blank" >Image download:TallCell</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:Classical</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/GOAnalysis_result/Classical.GO-Analysis-Log10P_All.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/GOAnalysis_result/Classical.GO-Analysis-Log10P_All.png" target="_blank" >Image download:Classical</a></li></ul></div></div></br>
+<p><b>Legand:</b>The picture shows the top 20 entries in GO-Term:the left most BP, the middle MF,the right most CC. Red represents a significant entry and blue represents a non-significant entry.</p>
+<p>Axis axis: Go-Term entry name; X axis: log2 (P-Value)</p>
+<p>GO analysis(BP results are as followed):</p>
+<p></p>
+<p align="center"><b>Table:TallCell</b>(maximum display 100 lines)(<a href="Result/8.GoPathway/GOAnalysis_result/TallCell.GO-Analysis_BP_All.xlsx" target="_blank">File Download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">GOID</th>
+<th class="sort-string-robust top-header-row ">GOTerm</th>
+<th class="sort-string-robust top-header-row ">DifGene</th>
+<th class="sort-string-robust top-header-row ">AllDifGene</th>
+<th class="sort-string-robust top-header-row ">GeneInGO</th>
+<th class="sort-string-robust top-header-row ">AllGene</th>
+<th class="sort-string-robust top-header-row ">P-Value</th>
+<th class="sort-string-robust top-header-row ">FDR</th>
+<th class="sort-string-robust top-header-row ">Enrichment</th>
+<th class="sort-string-robust top-header-row ">(-log10P)</th></tr></thead>
+<tbody>
+<tr>
+<td>GO:0007517</td>
+<td>muscle organ development</td>
+<td>3</td>
+<td>23</td>
+<td>104</td>
+<td>16961</td>
+<td>0.000362760339159418</td>
+<td>0.0346924186789881</td>
+<td>21.2721571906355</td>
+<td>3.44038020073477</td></tr>
+<tr>
+<td>GO:0030198</td>
+<td>extracellular matrix organization</td>
+<td>4</td>
+<td>23</td>
+<td>317</td>
+<td>16961</td>
+<td>0.000800606715623483</td>
+<td>0.0346924186789881</td>
+<td>9.30517075846935</td>
+<td>3.09658077128064</td></tr>
+<tr>
+<td>GO:0072302</td>
+<td>negative regulation of metanephric glomerular mesangial cell proliferation</td>
+<td>1</td>
+<td>23</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00135605211960374</td>
+<td>0.0346924186789881</td>
+<td>737.434782608696</td>
+<td>2.86772361812286</td></tr>
+<tr>
+<td>GO:0042494</td>
+<td>detection of bacterial lipoprotein</td>
+<td>1</td>
+<td>23</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00135605211960374</td>
+<td>0.0346924186789881</td>
+<td>737.434782608696</td>
+<td>2.86772361812286</td></tr>
+<tr>
+<td>GO:0050829</td>
+<td>defense response to Gram-negative bacterium</td>
+<td>2</td>
+<td>23</td>
+<td>43</td>
+<td>16961</td>
+<td>0.00153558241527137</td>
+<td>0.0346924186789881</td>
+<td>34.2992922143579</td>
+<td>2.81372686985128</td></tr>
+<tr>
+<td>GO:2001076</td>
+<td>positive regulation of metanephric ureteric bud development</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0007356</td>
+<td>thorax and anterior abdomen determination</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0003156</td>
+<td>regulation of organ formation</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0070171</td>
+<td>negative regulation of tooth mineralization</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0035802</td>
+<td>adrenal cortex formation</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0038065</td>
+<td>collagen-activated signaling pathway</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0061032</td>
+<td>visceral serous pericardium development</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:1903225</td>
+<td>negative regulation of endodermal cell differentiation</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0072166</td>
+<td>posterior mesonephric tubule development</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:0010565</td>
+<td>regulation of cellular ketone metabolic process</td>
+<td>1</td>
+<td>23</td>
+<td>2</td>
+<td>16961</td>
+<td>0.00271034520929594</td>
+<td>0.0346924186789881</td>
+<td>368.717391304348</td>
+<td>2.56697539069596</td></tr>
+<tr>
+<td>GO:2000482</td>
+<td>regulation of interleukin-8 secretion</td>
+<td>1</td>
+<td>23</td>
+<td>3</td>
+<td>16961</td>
+<td>0.00406288144726677</td>
+<td>0.0384971591772615</td>
+<td>245.811594202899</td>
+<td>2.39116584997214</td></tr>
+<tr>
+<td>GO:0016052</td>
+<td>carbohydrate catabolic process</td>
+<td>1</td>
+<td>23</td>
+<td>3</td>
+<td>16961</td>
+<td>0.00406288144726677</td>
+<td>0.0384971591772615</td>
+<td>245.811594202899</td>
+<td>2.39116584997214</td></tr>
+<tr>
+<td>GO:2000195</td>
+<td>negative regulation of female gonad development</td>
+<td>1</td>
+<td>23</td>
+<td>3</td>
+<td>16961</td>
+<td>0.00406288144726677</td>
+<td>0.0384971591772615</td>
+<td>245.811594202899</td>
+<td>2.39116584997214</td></tr>
+<tr>
+<td>GO:0007338</td>
+<td>single fertilization</td>
+<td>2</td>
+<td>23</td>
+<td>74</td>
+<td>16961</td>
+<td>0.00447742884289211</td>
+<td>0.0384971591772615</td>
+<td>19.930669800235</td>
+<td>2.34897130740743</td></tr>
+<tr>
+<td>GO:0030574</td>
+<td>collagen catabolic process</td>
+<td>2</td>
+<td>23</td>
+<td>74</td>
+<td>16961</td>
+<td>0.00447742884289211</td>
+<td>0.0384971591772615</td>
+<td>19.930669800235</td>
+<td>2.34897130740743</td></tr>
+<tr>
+<td>GO:2000483</td>
+<td>negative regulation of interleukin-8 secretion</td>
+<td>1</td>
+<td>23</td>
+<td>4</td>
+<td>16961</td>
+<td>0.0054136630093024</td>
+<td>0.0384971591772615</td>
+<td>184.358695652174</td>
+<td>2.26650878176748</td></tr>
+<tr>
+<td>GO:0060923</td>
+<td>cardiac muscle cell fate commitment</td>
+<td>1</td>
+<td>23</td>
+<td>4</td>
+<td>16961</td>
+<td>0.0054136630093024</td>
+<td>0.0384971591772615</td>
+<td>184.358695652174</td>
+<td>2.26650878176748</td></tr>
+<tr>
+<td>GO:0060421</td>
+<td>positive regulation of heart growth</td>
+<td>1</td>
+<td>23</td>
+<td>4</td>
+<td>16961</td>
+<td>0.0054136630093024</td>
+<td>0.0384971591772615</td>
+<td>184.358695652174</td>
+<td>2.26650878176748</td></tr>
+<tr>
+<td>GO:1900212</td>
+<td>negative regulation of mesenchymal cell apoptotic process involved in metanephros development</td>
+<td>1</td>
+<td>23</td>
+<td>4</td>
+<td>16961</td>
+<td>0.0054136630093024</td>
+<td>0.0384971591772615</td>
+<td>184.358695652174</td>
+<td>2.26650878176748</td></tr>
+<tr>
+<td>GO:0046320</td>
+<td>regulation of fatty acid oxidation</td>
+<td>1</td>
+<td>23</td>
+<td>4</td>
+<td>16961</td>
+<td>0.0054136630093024</td>
+<td>0.0384971591772615</td>
+<td>184.358695652174</td>
+<td>2.26650878176748</td></tr>
+<tr>
+<td>GO:0048592</td>
+<td>eye morphogenesis</td>
+<td>1</td>
+<td>23</td>
+<td>4</td>
+<td>16961</td>
+<td>0.0054136630093024</td>
+<td>0.0384971591772615</td>
+<td>184.358695652174</td>
+<td>2.26650878176748</td></tr>
+<tr>
+<td>GO:0090526</td>
+<td>regulation of gluconeogenesis involved in cellular glucose homeostasis</td>
+<td>1</td>
+<td>23</td>
+<td>4</td>
+<td>16961</td>
+<td>0.0054136630093024</td>
+<td>0.0384971591772615</td>
+<td>184.358695652174</td>
+<td>2.26650878176748</td></tr>
+<tr>
+<td>GO:0060591</td>
+<td>chondroblast differentiation</td>
+<td>1</td>
+<td>23</td>
+<td>5</td>
+<td>16961</td>
+<td>0.00676269206817021</td>
+<td>0.0418850605512477</td>
+<td>147.486956521739</td>
+<td>2.16988038725145</td></tr>
+<tr>
+<td>GO:0044245</td>
+<td>polysaccharide digestion</td>
+<td>1</td>
+<td>23</td>
+<td>5</td>
+<td>16961</td>
+<td>0.00676269206817021</td>
+<td>0.0418850605512477</td>
+<td>147.486956521739</td>
+<td>2.16988038725145</td></tr>
+<tr>
+<td>GO:0072284</td>
+<td>metanephric S-shaped body morphogenesis</td>
+<td>1</td>
+<td>23</td>
+<td>5</td>
+<td>16961</td>
+<td>0.00676269206817021</td>
+<td>0.0418850605512477</td>
+<td>147.486956521739</td>
+<td>2.16988038725145</td></tr>
+<tr>
+<td>GO:0072207</td>
+<td>metanephric epithelium development</td>
+<td>1</td>
+<td>23</td>
+<td>5</td>
+<td>16961</td>
+<td>0.00676269206817021</td>
+<td>0.0418850605512477</td>
+<td>147.486956521739</td>
+<td>2.16988038725145</td></tr>
+<tr>
+<td>GO:2001054</td>
+<td>negative regulation of mesenchymal cell apoptotic process</td>
+<td>1</td>
+<td>23</td>
+<td>6</td>
+<td>16961</td>
+<td>0.00810997079441255</td>
+<td>0.0477751647417415</td>
+<td>122.905797101449</td>
+<td>2.09098070976521</td></tr>
+<tr>
+<td>GO:0007530</td>
+<td>sex determination</td>
+<td>1</td>
+<td>23</td>
+<td>7</td>
+<td>16961</td>
+<td>0.00945550135513634</td>
+<td>0.0477751647417415</td>
+<td>105.347826086957</td>
+<td>2.0243154387918</td></tr>
+<tr>
+<td>GO:0033132</td>
+<td>negative regulation of glucokinase activity</td>
+<td>1</td>
+<td>23</td>
+<td>7</td>
+<td>16961</td>
+<td>0.00945550135513634</td>
+<td>0.0477751647417415</td>
+<td>105.347826086957</td>
+<td>2.0243154387918</td></tr>
+<tr>
+<td>GO:0042304</td>
+<td>regulation of fatty acid biosynthetic process</td>
+<td>1</td>
+<td>23</td>
+<td>7</td>
+<td>16961</td>
+<td>0.00945550135513634</td>
+<td>0.0477751647417415</td>
+<td>105.347826086957</td>
+<td>2.0243154387918</td></tr>
+<tr>
+<td>GO:0072112</td>
+<td>glomerular visceral epithelial cell differentiation</td>
+<td>1</td>
+<td>23</td>
+<td>7</td>
+<td>16961</td>
+<td>0.00945550135513634</td>
+<td>0.0477751647417415</td>
+<td>105.347826086957</td>
+<td>2.0243154387918</td></tr>
+<tr>
+<td>GO:0006929</td>
+<td>substrate-dependent cell migration</td>
+<td>1</td>
+<td>23</td>
+<td>7</td>
+<td>16961</td>
+<td>0.00945550135513634</td>
+<td>0.0477751647417415</td>
+<td>105.347826086957</td>
+<td>2.0243154387918</td></tr>
+<tr>
+<td>GO:0014894</td>
+<td>response to denervation involved in regulation of muscle adaptation</td>
+<td>1</td>
+<td>23</td>
+<td>7</td>
+<td>16961</td>
+<td>0.00945550135513634</td>
+<td>0.0477751647417415</td>
+<td>105.347826086957</td>
+<td>2.0243154387918</td></tr>
+<tr>
+<td>GO:0060231</td>
+<td>mesenchymal to epithelial transition</td>
+<td>1</td>
+<td>23</td>
+<td>8</td>
+<td>16961</td>
+<td>0.010799285918398</td>
+<td>0.0495986109720849</td>
+<td>92.179347826087</td>
+<td>1.96660496043455</td></tr>
+<tr>
+<td>GO:2000020</td>
+<td>positive regulation of male gonad development</td>
+<td>1</td>
+<td>23</td>
+<td>8</td>
+<td>16961</td>
+<td>0.010799285918398</td>
+<td>0.0495986109720849</td>
+<td>92.179347826087</td>
+<td>1.96660496043455</td></tr>
+<tr>
+<td>GO:0072075</td>
+<td>metanephric mesenchyme development</td>
+<td>1</td>
+<td>23</td>
+<td>8</td>
+<td>16961</td>
+<td>0.010799285918398</td>
+<td>0.0495986109720849</td>
+<td>92.179347826087</td>
+<td>1.96660496043455</td></tr>
+<tr>
+<td>GO:0022617</td>
+<td>extracellular matrix disassembly</td>
+<td>2</td>
+<td>23</td>
+<td>120</td>
+<td>16961</td>
+<td>0.0113972051371162</td>
+<td>0.0495986109720849</td>
+<td>12.2905797101449</td>
+<td>1.94320163483382</td></tr>
+<tr>
+<td>GO:0045124</td>
+<td>regulation of bone resorption</td>
+<td>1</td>
+<td>23</td>
+<td>9</td>
+<td>16961</td>
+<td>0.0121413266442083</td>
+<td>0.0495986109720849</td>
+<td>81.9371980676328</td>
+<td>1.91573385668904</td></tr>
+<tr>
+<td>GO:0032836</td>
+<td>glomerular basement membrane development</td>
+<td>1</td>
+<td>23</td>
+<td>9</td>
+<td>16961</td>
+<td>0.0121413266442083</td>
+<td>0.0495986109720849</td>
+<td>81.9371980676328</td>
+<td>1.91573385668904</td></tr>
+<tr>
+<td>GO:0032835</td>
+<td>glomerulus development</td>
+<td>1</td>
+<td>23</td>
+<td>9</td>
+<td>16961</td>
+<td>0.0121413266442083</td>
+<td>0.0495986109720849</td>
+<td>81.9371980676328</td>
+<td>1.91573385668904</td></tr>
+<tr>
+<td>GO:0033627</td>
+<td>cell adhesion mediated by integrin</td>
+<td>1</td>
+<td>23</td>
+<td>9</td>
+<td>16961</td>
+<td>0.0121413266442083</td>
+<td>0.0495986109720849</td>
+<td>81.9371980676328</td>
+<td>1.91573385668904</td></tr>
+<tr>
+<td>GO:0007184</td>
+<td>SMAD protein import into nucleus</td>
+<td>1</td>
+<td>23</td>
+<td>9</td>
+<td>16961</td>
+<td>0.0121413266442083</td>
+<td>0.0495986109720849</td>
+<td>81.9371980676328</td>
+<td>1.91573385668904</td></tr>
+<tr>
+<td>GO:0060539</td>
+<td>diaphragm development</td>
+<td>1</td>
+<td>23</td>
+<td>10</td>
+<td>16961</td>
+<td>0.0134816256932602</td>
+<td>0.0528259619001214</td>
+<td>73.7434782608696</td>
+<td>1.87025773487475</td></tr>
+<tr>
+<td>GO:0006903</td>
+<td>vesicle targeting</td>
+<td>1</td>
+<td>23</td>
+<td>10</td>
+<td>16961</td>
+<td>0.0134816256932602</td>
+<td>0.0528259619001214</td>
+<td>73.7434782608696</td>
+<td>1.87025773487475</td></tr>
+<tr>
+<td>GO:0035136</td>
+<td>forelimb morphogenesis</td>
+<td>1</td>
+<td>23</td>
+<td>12</td>
+<td>16961</td>
+<td>0.0161570073927858</td>
+<td>0.0592421876740722</td>
+<td>61.4528985507246</td>
+<td>1.79163907630618</td></tr>
+<tr>
+<td>GO:0035137</td>
+<td>hindlimb morphogenesis</td>
+<td>1</td>
+<td>23</td>
+<td>12</td>
+<td>16961</td>
+<td>0.0161570073927858</td>
+<td>0.0592421876740722</td>
+<td>61.4528985507246</td>
+<td>1.79163907630618</td></tr>
+<tr>
+<td>GO:0010510</td>
+<td>regulation of acetyl-CoA biosynthetic process from pyruvate</td>
+<td>1</td>
+<td>23</td>
+<td>12</td>
+<td>16961</td>
+<td>0.0161570073927858</td>
+<td>0.0592421876740722</td>
+<td>61.4528985507246</td>
+<td>1.79163907630618</td></tr>
+<tr>
+<td>GO:0002376</td>
+<td>immune system process</td>
+<td>3</td>
+<td>23</td>
+<td>401</td>
+<td>16961</td>
+<td>0.0163533122225303</td>
+<td>0.0592421876740722</td>
+<td>5.51696844844411</td>
+<td>1.78639427148797</td></tr>
+<tr>
+<td>GO:0060009</td>
+<td>Sertoli cell development</td>
+<td>1</td>
+<td>23</td>
+<td>14</td>
+<td>16961</td>
+<td>0.0188254482430175</td>
+<td>0.0645443939760598</td>
+<td>52.6739130434783</td>
+<td>1.72525467424272</td></tr>
+<tr>
+<td>GO:0001823</td>
+<td>mesonephros development</td>
+<td>1</td>
+<td>23</td>
+<td>14</td>
+<td>16961</td>
+<td>0.0188254482430175</td>
+<td>0.0645443939760598</td>
+<td>52.6739130434783</td>
+<td>1.72525467424272</td></tr>
+<tr>
+<td>GO:0010952</td>
+<td>positive regulation of peptidase activity</td>
+<td>1</td>
+<td>23</td>
+<td>14</td>
+<td>16961</td>
+<td>0.0188254482430175</td>
+<td>0.0645443939760598</td>
+<td>52.6739130434783</td>
+<td>1.72525467424272</td></tr>
+<tr>
+<td>GO:0071371</td>
+<td>cellular response to gonadotropin stimulus</td>
+<td>1</td>
+<td>23</td>
+<td>15</td>
+<td>16961</td>
+<td>0.0201570712262133</td>
+<td>0.0655958928039483</td>
+<td>49.1623188405797</td>
+<td>1.69557256958244</td></tr>
+<tr>
+<td>GO:0072520</td>
+<td>seminiferous tubule development</td>
+<td>1</td>
+<td>23</td>
+<td>15</td>
+<td>16961</td>
+<td>0.0201570712262133</td>
+<td>0.0655958928039483</td>
+<td>49.1623188405797</td>
+<td>1.69557256958244</td></tr>
+<tr>
+<td>GO:0032854</td>
+<td>positive regulation of Rap GTPase activity</td>
+<td>1</td>
+<td>23</td>
+<td>15</td>
+<td>16961</td>
+<td>0.0201570712262133</td>
+<td>0.0655958928039483</td>
+<td>49.1623188405797</td>
+<td>1.69557256958244</td></tr>
+<tr>
+<td>GO:2000811</td>
+<td>negative regulation of anoikis</td>
+<td>1</td>
+<td>23</td>
+<td>16</td>
+<td>16961</td>
+<td>0.0214869654414089</td>
+<td>0.0687582894125086</td>
+<td>46.0896739130435</td>
+<td>1.66782491466716</td></tr>
+<tr>
+<td>GO:0000042</td>
+<td>protein targeting to Golgi</td>
+<td>1</td>
+<td>23</td>
+<td>18</td>
+<td>16961</td>
+<td>0.0241415761337876</td>
+<td>0.0735743272648765</td>
+<td>40.9685990338164</td>
+<td>1.61723437948053</td></tr>
+<tr>
+<td>GO:0032331</td>
+<td>negative regulation of chondrocyte differentiation</td>
+<td>1</td>
+<td>23</td>
+<td>18</td>
+<td>16961</td>
+<td>0.0241415761337876</td>
+<td>0.0735743272648765</td>
+<td>40.9685990338164</td>
+<td>1.61723437948053</td></tr>
+<tr>
+<td>GO:0032332</td>
+<td>positive regulation of chondrocyte differentiation</td>
+<td>1</td>
+<td>23</td>
+<td>18</td>
+<td>16961</td>
+<td>0.0241415761337876</td>
+<td>0.0735743272648765</td>
+<td>40.9685990338164</td>
+<td>1.61723437948053</td></tr>
+<tr>
+<td>GO:0009888</td>
+<td>tissue development</td>
+<td>1</td>
+<td>23</td>
+<td>19</td>
+<td>16961</td>
+<td>0.025466296891078</td>
+<td>0.075223523124415</td>
+<td>38.812356979405</td>
+<td>1.59403420213862</td></tr>
+<tr>
+<td>GO:0010906</td>
+<td>regulation of glucose metabolic process</td>
+<td>1</td>
+<td>23</td>
+<td>19</td>
+<td>16961</td>
+<td>0.025466296891078</td>
+<td>0.075223523124415</td>
+<td>38.812356979405</td>
+<td>1.59403420213862</td></tr>
+<tr>
+<td>GO:0030539</td>
+<td>male genitalia development</td>
+<td>1</td>
+<td>23</td>
+<td>20</td>
+<td>16961</td>
+<td>0.0267892974295571</td>
+<td>0.0771033048465452</td>
+<td>36.8717391304348</td>
+<td>1.57203867595758</td></tr>
+<tr>
+<td>GO:0071398</td>
+<td>cellular response to fatty acid</td>
+<td>1</td>
+<td>23</td>
+<td>21</td>
+<td>16961</td>
+<td>0.0281105798919696</td>
+<td>0.0771033048465452</td>
+<td>35.1159420289855</td>
+<td>1.55113019525756</td></tr>
+<tr>
+<td>GO:0002504</td>
+<td>antigen processing and presentation of peptide or polysaccharide antigen via MHC class II</td>
+<td>1</td>
+<td>23</td>
+<td>21</td>
+<td>16961</td>
+<td>0.0281105798919696</td>
+<td>0.0771033048465452</td>
+<td>35.1159420289855</td>
+<td>1.55113019525756</td></tr>
+<tr>
+<td>GO:0007178</td>
+<td>transmembrane receptor protein serine/threonine kinase signaling pathway</td>
+<td>1</td>
+<td>23</td>
+<td>21</td>
+<td>16961</td>
+<td>0.0281105798919696</td>
+<td>0.0771033048465452</td>
+<td>35.1159420289855</td>
+<td>1.55113019525756</td></tr>
+<tr>
+<td>GO:0006885</td>
+<td>regulation of pH</td>
+<td>1</td>
+<td>23</td>
+<td>21</td>
+<td>16961</td>
+<td>0.0281105798919696</td>
+<td>0.0771033048465452</td>
+<td>35.1159420289855</td>
+<td>1.55113019525756</td></tr>
+<tr>
+<td>GO:0071549</td>
+<td>cellular response to dexamethasone stimulus</td>
+<td>1</td>
+<td>23</td>
+<td>27</td>
+<td>16961</td>
+<td>0.0360023140451135</td>
+<td>0.0934114094143486</td>
+<td>27.3123993558776</td>
+<td>1.44366958410145</td></tr>
+<tr>
+<td>GO:0006090</td>
+<td>pyruvate metabolic process</td>
+<td>1</td>
+<td>23</td>
+<td>27</td>
+<td>16961</td>
+<td>0.0360023140451135</td>
+<td>0.0934114094143486</td>
+<td>27.3123993558776</td>
+<td>1.44366958410145</td></tr>
+<tr>
+<td>GO:0030325</td>
+<td>adrenal gland development</td>
+<td>1</td>
+<td>23</td>
+<td>27</td>
+<td>16961</td>
+<td>0.0360023140451135</td>
+<td>0.0934114094143486</td>
+<td>27.3123993558776</td>
+<td>1.44366958410145</td></tr>
+<tr>
+<td>GO:0006906</td>
+<td>vesicle fusion</td>
+<td>1</td>
+<td>23</td>
+<td>27</td>
+<td>16961</td>
+<td>0.0360023140451135</td>
+<td>0.0934114094143486</td>
+<td>27.3123993558776</td>
+<td>1.44366958410145</td></tr>
+<tr>
+<td>GO:0008406</td>
+<td>gonad development</td>
+<td>1</td>
+<td>23</td>
+<td>28</td>
+<td>16961</td>
+<td>0.0373116294333606</td>
+<td>0.095517771349403</td>
+<td>26.3369565217391</td>
+<td>1.4281557845034</td></tr>
+<tr>
+<td>GO:0040014</td>
+<td>regulation of multicellular organism growth</td>
+<td>1</td>
+<td>23</td>
+<td>29</td>
+<td>16961</td>
+<td>0.038619243709903</td>
+<td>0.0975644051618601</td>
+<td>25.4287856071964</td>
+<td>1.41319623536843</td></tr>
+<tr>
+<td>GO:0031214</td>
+<td>biomineral tissue development</td>
+<td>1</td>
+<td>23</td>
+<td>30</td>
+<td>16961</td>
+<td>0.0399251589812771</td>
+<td>0.0995536431740937</td>
+<td>24.5811594202899</td>
+<td>1.39875334583309</td></tr>
+<tr>
+<td>GO:0046907</td>
+<td>intracellular transport</td>
+<td>1</td>
+<td>23</td>
+<td>31</td>
+<td>16961</td>
+<td>0.0412293773557383</td>
+<td>0.100203043700022</td>
+<td>23.7882187938289</td>
+<td>1.38479322384547</td></tr>
+<tr>
+<td>GO:0030513</td>
+<td>positive regulation of BMP signaling pathway</td>
+<td>1</td>
+<td>23</td>
+<td>31</td>
+<td>16961</td>
+<td>0.0412293773557383</td>
+<td>0.100203043700022</td>
+<td>23.7882187938289</td>
+<td>1.38479322384547</td></tr>
+<tr>
+<td>GO:0010107</td>
+<td>potassium ion import</td>
+<td>1</td>
+<td>23</td>
+<td>35</td>
+<td>16961</td>
+<td>0.0464293239723385</td>
+<td>0.110054693860358</td>
+<td>21.0695652173913</td>
+<td>1.3332076397717</td></tr>
+<tr>
+<td>GO:0030282</td>
+<td>bone mineralization</td>
+<td>1</td>
+<td>23</td>
+<td>35</td>
+<td>16961</td>
+<td>0.0464293239723385</td>
+<td>0.110054693860358</td>
+<td>21.0695652173913</td>
+<td>1.3332076397717</td></tr>
+<tr>
+<td>GO:0007281</td>
+<td>germ cell development</td>
+<td>1</td>
+<td>23</td>
+<td>37</td>
+<td>16961</td>
+<td>0.0490191705108508</td>
+<td>0.11477659436687</td>
+<td>19.930669800235</td>
+<td>1.30963404203556</td></tr>
+<tr>
+<td>GO:0072593</td>
+<td>reactive oxygen species metabolic process</td>
+<td>1</td>
+<td>23</td>
+<td>38</td>
+<td>16961</td>
+<td>0.0503115694179679</td>
+<td>0.116383389496986</td>
+<td>19.4061784897025</td>
+<td>1.29833213509062</td></tr>
+<tr>
+<td>GO:0040007</td>
+<td>growth</td>
+<td>1</td>
+<td>23</td>
+<td>41</td>
+<td>16961</td>
+<td>0.0541786937135252</td>
+<td>0.120957083639498</td>
+<td>17.9862142099682</td>
+<td>1.26617147032254</td></tr>
+<tr>
+<td>GO:0001656</td>
+<td>metanephros development</td>
+<td>1</td>
+<td>23</td>
+<td>41</td>
+<td>16961</td>
+<td>0.0541786937135252</td>
+<td>0.120957083639498</td>
+<td>17.9862142099682</td>
+<td>1.26617147032254</td></tr>
+<tr>
+<td>GO:0030199</td>
+<td>collagen fibril organization</td>
+<td>1</td>
+<td>23</td>
+<td>41</td>
+<td>16961</td>
+<td>0.0541786937135252</td>
+<td>0.120957083639498</td>
+<td>17.9862142099682</td>
+<td>1.26617147032254</td></tr>
+<tr>
+<td>GO:0007155</td>
+<td>cell adhesion</td>
+<td>3</td>
+<td>23</td>
+<td>645</td>
+<td>16961</td>
+<td>0.0551028804765118</td>
+<td>0.121606356913681</td>
+<td>3.42992922143579</td>
+<td>1.25882569802014</td></tr>
+<tr>
+<td>GO:0042594</td>
+<td>response to starvation</td>
+<td>1</td>
+<td>23</td>
+<td>43</td>
+<td>16961</td>
+<td>0.056748403712393</td>
+<td>0.123814699008857</td>
+<td>17.149646107179</td>
+<td>1.2460463503225</td></tr>
+<tr>
+<td>GO:0002062</td>
+<td>chondrocyte differentiation</td>
+<td>1</td>
+<td>23</td>
+<td>45</td>
+<td>16961</td>
+<td>0.0593114348135079</td>
+<td>0.125089963248463</td>
+<td>16.3874396135266</td>
+<td>1.22686156974424</td></tr>
+<tr>
+<td>GO:0009267</td>
+<td>cellular response to starvation</td>
+<td>1</td>
+<td>23</td>
+<td>46</td>
+<td>16961</td>
+<td>0.0605904509484743</td>
+<td>0.125089963248463</td>
+<td>16.031190926276</td>
+<td>1.21759581522578</td></tr>
+<tr>
+<td>GO:0001657</td>
+<td>ureteric bud development</td>
+<td>1</td>
+<td>23</td>
+<td>46</td>
+<td>16961</td>
+<td>0.0605904509484743</td>
+<td>0.125089963248463</td>
+<td>16.031190926276</td>
+<td>1.21759581522578</td></tr>
+<tr>
+<td>GO:0001658</td>
+<td>branching involved in ureteric bud morphogenesis</td>
+<td>1</td>
+<td>23</td>
+<td>46</td>
+<td>16961</td>
+<td>0.0605904509484743</td>
+<td>0.125089963248463</td>
+<td>16.031190926276</td>
+<td>1.21759581522578</td></tr>
+<tr>
+<td>GO:0010862</td>
+<td>positive regulation of pathway-restricted SMAD protein phosphorylation</td>
+<td>1</td>
+<td>23</td>
+<td>46</td>
+<td>16961</td>
+<td>0.0605904509484743</td>
+<td>0.125089963248463</td>
+<td>16.031190926276</td>
+<td>1.21759581522578</td></tr>
+<tr>
+<td>GO:0071277</td>
+<td>cellular response to calcium ion</td>
+<td>1</td>
+<td>23</td>
+<td>48</td>
+<td>16961</td>
+<td>0.0631434947430751</td>
+<td>0.12897394670926</td>
+<td>15.3632246376812</td>
+<td>1.19967138529411</td></tr>
+<tr>
+<td>GO:0071230</td>
+<td>cellular response to amino acid stimulus</td>
+<td>1</td>
+<td>23</td>
+<td>49</td>
+<td>16961</td>
+<td>0.0644175265367087</td>
+<td>0.130191211526822</td>
+<td>15.0496894409938</td>
+<td>1.19099595496001</td></tr>
+<tr>
+<td>GO:0071320</td>
+<td>cellular response to cAMP</td>
+<td>1</td>
+<td>23</td>
+<td>50</td>
+<td>16961</td>
+<td>0.0656899009934605</td>
+<td>0.131379801986921</td>
+<td>14.7486956521739</td>
+<td>1.18250139269193</td></tr>
+<tr>
+<td>GO:0043408</td>
+<td>regulation of MAPK cascade</td>
+<td>1</td>
+<td>23</td>
+<td>52</td>
+<td>16961</td>
+<td>0.0682296861710962</td>
+<td>0.133674487192352</td>
+<td>14.1814381270903</td>
+<td>1.1660266262941</td></tr>
+<tr>
+<td>GO:0050885</td>
+<td>neuromuscular process controlling balance</td>
+<td>1</td>
+<td>23</td>
+<td>52</td>
+<td>16961</td>
+<td>0.0682296861710962</td>
+<td>0.133674487192352</td>
+<td>14.1814381270903</td>
+<td>1.1660266262941</td></tr>
+<tr>
+<td>GO:0043588</td>
+<td>skin development</td>
+<td>1</td>
+<td>23</td>
+<td>55</td>
+<td>16961</td>
+<td>0.0720269853559298</td>
+<td>0.139688698872106</td>
+<td>13.4079051383399</td>
+<td>1.14250476196471</td></tr>
+<tr>
+<td>GO:0043065</td>
+<td>positive regulation of apoptotic process</td>
+<td>2</td>
+<td>23</td>
+<td>330</td>
+<td>16961</td>
+<td>0.0730331725815381</td>
+<td>0.140223691356553</td>
+<td>4.46930171277997</td>
+<td>1.13647983307445</td></tr>
+</tbody></table>
+</div>
+</br>
+<p align="center"><b>Table:Classical</b>(maximum display 100 lines)(<a href="Result/8.GoPathway/GOAnalysis_result/Classical.GO-Analysis_BP_All.xlsx" target="_blank">File Download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">GOID</th>
+<th class="sort-string-robust top-header-row ">GOTerm</th>
+<th class="sort-string-robust top-header-row ">DifGene</th>
+<th class="sort-string-robust top-header-row ">AllDifGene</th>
+<th class="sort-string-robust top-header-row ">GeneInGO</th>
+<th class="sort-string-robust top-header-row ">AllGene</th>
+<th class="sort-string-robust top-header-row ">P-Value</th>
+<th class="sort-string-robust top-header-row ">FDR</th>
+<th class="sort-string-robust top-header-row ">Enrichment</th>
+<th class="sort-string-robust top-header-row ">(-log10P)</th></tr></thead>
+<tbody>
+<tr>
+<td>GO:0006508</td>
+<td>proteolysis</td>
+<td>3</td>
+<td>4</td>
+<td>660</td>
+<td>16961</td>
+<td>0.00022784074451492</td>
+<td>0.00141501090735452</td>
+<td>19.2738636363636</td>
+<td>3.64236860889737</td></tr>
+<tr>
+<td>GO:0015706</td>
+<td>nitrate transport</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>16961</td>
+<td>0.000235835151225753</td>
+<td>0.00141501090735452</td>
+<td>4240.25</td>
+<td>3.62739146283032</td></tr>
+<tr>
+<td>GO:0015793</td>
+<td>glycerol transport</td>
+<td>1</td>
+<td>4</td>
+<td>12</td>
+<td>16961</td>
+<td>0.00282726963277609</td>
+<td>0.00989369322078515</td>
+<td>353.354166666667</td>
+<td>2.54863277147412</td></tr>
+<tr>
+<td>GO:0009992</td>
+<td>cellular water homeostasis</td>
+<td>1</td>
+<td>4</td>
+<td>14</td>
+<td>16961</td>
+<td>0.00329789774026172</td>
+<td>0.00989369322078515</td>
+<td>302.875</td>
+<td>2.4817628148918</td></tr>
+<tr>
+<td>GO:0006820</td>
+<td>anion transport</td>
+<td>1</td>
+<td>4</td>
+<td>29</td>
+<td>16961</td>
+<td>0.00682230060872215</td>
+<td>0.0145830275902794</td>
+<td>146.215517241379</td>
+<td>2.16606914833628</td></tr>
+<tr>
+<td>GO:0042476</td>
+<td>odontogenesis</td>
+<td>1</td>
+<td>4</td>
+<td>31</td>
+<td>16961</td>
+<td>0.00729151379513972</td>
+<td>0.0145830275902794</td>
+<td>136.782258064516</td>
+<td>2.13718229820792</td></tr>
+<tr>
+<td>GO:0006833</td>
+<td>water transport</td>
+<td>1</td>
+<td>4</td>
+<td>39</td>
+<td>16961</td>
+<td>0.00916670418738363</td>
+<td>0.0148038228220684</td>
+<td>108.724358974359</td>
+<td>2.03778678325227</td></tr>
+<tr>
+<td>GO:0007588</td>
+<td>excretion</td>
+<td>1</td>
+<td>4</td>
+<td>42</td>
+<td>16961</td>
+<td>0.00986921521471226</td>
+<td>0.0148038228220684</td>
+<td>100.958333333333</td>
+<td>2.00571738040743</td></tr>
+<tr>
+<td>GO:0098656</td>
+<td>anion transmembrane transport</td>
+<td>1</td>
+<td>4</td>
+<td>62</td>
+<td>16961</td>
+<td>0.014543080086247</td>
+<td>0.0193907734483293</td>
+<td>68.3911290322581</td>
+<td>1.83734360428864</td></tr>
+<tr>
+<td>GO:0034220</td>
+<td>ion transmembrane transport</td>
+<td>1</td>
+<td>4</td>
+<td>323</td>
+<td>16961</td>
+<td>0.0740326356172021</td>
+<td>0.0888391627406425</td>
+<td>13.1277089783282</td>
+<td>1.13057678913418</td></tr>
+<tr>
+<td>GO:0055085</td>
+<td>transmembrane transport</td>
+<td>1</td>
+<td>4</td>
+<td>831</td>
+<td>16961</td>
+<td>0.182055687682349</td>
+<td>0.19860620474438</td>
+<td>5.102587244284</td>
+<td>0.739795748531887</td></tr>
+<tr>
+<td>GO:0006810</td>
+<td>transport</td>
+<td>1</td>
+<td>4</td>
+<td>1908</td>
+<td>16961</td>
+<td>0.379606907381954</td>
+<td>0.379606907381954</td>
+<td>2.22235324947589</td>
+<td>0.420665893687911</td></tr>
+</tbody></table>
+</div>
+</br>
+<p align="center"><b>Table:Follicular</b>(maximum display 100 lines)(<a href="Result/8.GoPathway/GOAnalysis_result/Follicular.GO-Analysis_BP_All.xlsx" target="_blank">File Download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">GOID</th>
+<th class="sort-string-robust top-header-row ">GOTerm</th>
+<th class="sort-string-robust top-header-row ">DifGene</th>
+<th class="sort-string-robust top-header-row ">AllDifGene</th>
+<th class="sort-string-robust top-header-row ">GeneInGO</th>
+<th class="sort-string-robust top-header-row ">AllGene</th>
+<th class="sort-string-robust top-header-row ">P-Value</th>
+<th class="sort-string-robust top-header-row ">FDR</th>
+<th class="sort-string-robust top-header-row ">Enrichment</th>
+<th class="sort-string-robust top-header-row ">(-log10P)</th></tr></thead>
+<tbody>
+<tr>
+<td>GO:0006956</td>
+<td>complement activation</td>
+<td>10</td>
+<td>140</td>
+<td>70</td>
+<td>16961</td>
+<td>2.76212816068431e-10</td>
+<td>1.40571096338021e-07</td>
+<td>17.3071428571429</td>
+<td>9.55875617435018</td></tr>
+<tr>
+<td>GO:0050776</td>
+<td>regulation of immune response</td>
+<td>13</td>
+<td>140</td>
+<td>152</td>
+<td>16961</td>
+<td>3.87002197815777e-10</td>
+<td>1.40571096338021e-07</td>
+<td>10.3615131578947</td>
+<td>9.41228656858172</td></tr>
+<tr>
+<td>GO:0006958</td>
+<td>complement activation, classical pathway</td>
+<td>10</td>
+<td>140</td>
+<td>74</td>
+<td>16961</td>
+<td>4.8640517764021e-10</td>
+<td>1.40571096338021e-07</td>
+<td>16.3716216216216</td>
+<td>9.31300181077355</td></tr>
+<tr>
+<td>GO:0006955</td>
+<td>immune response</td>
+<td>16</td>
+<td>140</td>
+<td>409</td>
+<td>16961</td>
+<td>2.72077296303987e-07</td>
+<td>5.89727539738892e-05</td>
+<td>4.73936430317848</td>
+<td>6.56530769674019</td></tr>
+<tr>
+<td>GO:0007166</td>
+<td>cell surface receptor signaling pathway</td>
+<td>13</td>
+<td>140</td>
+<td>314</td>
+<td>16961</td>
+<td>2.04581384433133e-06</td>
+<td>0.000354744120607053</td>
+<td>5.01576433121019</td>
+<td>5.68913388678115</td></tr>
+<tr>
+<td>GO:0038096</td>
+<td>Fc-gamma receptor signaling pathway involved in phagocytosis</td>
+<td>8</td>
+<td>140</td>
+<td>116</td>
+<td>16961</td>
+<td>5.29141831999285e-06</td>
+<td>0.000764609947238967</td>
+<td>8.3551724137931</td>
+<td>5.27642790339269</td></tr>
+<tr>
+<td>GO:0050850</td>
+<td>positive regulation of calcium-mediated signaling</td>
+<td>4</td>
+<td>140</td>
+<td>22</td>
+<td>16961</td>
+<td>2.89788301704028e-05</td>
+<td>0.00358923510824846</td>
+<td>22.0272727272727</td>
+<td>4.53791915029318</td></tr>
+<tr>
+<td>GO:0031295</td>
+<td>T cell costimulation</td>
+<td>6</td>
+<td>140</td>
+<td>76</td>
+<td>16961</td>
+<td>3.86384632605485e-05</td>
+<td>0.00418744345586194</td>
+<td>9.56447368421053</td>
+<td>4.41298015479111</td></tr>
+<tr>
+<td>GO:0045087</td>
+<td>innate immune response</td>
+<td>20</td>
+<td>140</td>
+<td>900</td>
+<td>16961</td>
+<td>4.9649784444454e-05</td>
+<td>0.00478292923481573</td>
+<td>2.69222222222222</td>
+<td>4.30408263266281</td></tr>
+<tr>
+<td>GO:0006898</td>
+<td>receptor-mediated endocytosis</td>
+<td>8</td>
+<td>140</td>
+<td>177</td>
+<td>16961</td>
+<td>0.000111240848442345</td>
+<td>0.00964458155995134</td>
+<td>5.47570621468927</td>
+<td>3.95373570739846</td></tr>
+<tr>
+<td>GO:0008284</td>
+<td>positive regulation of cell proliferation</td>
+<td>13</td>
+<td>140</td>
+<td>503</td>
+<td>16961</td>
+<td>0.000273542787814782</td>
+<td>0.0215601451850378</td>
+<td>3.13111332007952</td>
+<td>3.56297473127413</td></tr>
+<tr>
+<td>GO:0050731</td>
+<td>positive regulation of peptidyl-tyrosine phosphorylation</td>
+<td>5</td>
+<td>140</td>
+<td>87</td>
+<td>16961</td>
+<td>0.000766049136968466</td>
+<td>0.0553470501459717</td>
+<td>6.96264367816092</td>
+<td>3.11574337236499</td></tr>
+<tr>
+<td>GO:0002250</td>
+<td>adaptive immune response</td>
+<td>6</td>
+<td>140</td>
+<td>134</td>
+<td>16961</td>
+<td>0.000858695846130619</td>
+<td>0.0572684075842498</td>
+<td>5.42462686567164</td>
+<td>3.06616063795945</td></tr>
+<tr>
+<td>GO:0030449</td>
+<td>regulation of complement activation</td>
+<td>3</td>
+<td>140</td>
+<td>26</td>
+<td>16961</td>
+<td>0.00124524400624146</td>
+<td>0.0771161823865248</td>
+<td>13.9788461538462</td>
+<td>2.90474553998909</td></tr>
+<tr>
+<td>GO:0050862</td>
+<td>positive regulation of T cell receptor signaling pathway</td>
+<td>2</td>
+<td>140</td>
+<td>7</td>
+<td>16961</td>
+<td>0.00138257270619502</td>
+<td>0.0771465737793088</td>
+<td>34.6142857142857</td>
+<td>2.85931202091366</td></tr>
+<tr>
+<td>GO:0042102</td>
+<td>positive regulation of T cell proliferation</td>
+<td>4</td>
+<td>140</td>
+<td>59</td>
+<td>16961</td>
+<td>0.00142369686328598</td>
+<td>0.0771465737793088</td>
+<td>8.2135593220339</td>
+<td>2.84658247180649</td></tr>
+<tr>
+<td>GO:0002376</td>
+<td>immune system process</td>
+<td>10</td>
+<td>140</td>
+<td>401</td>
+<td>16961</td>
+<td>0.00183230690727904</td>
+<td>0.0918794345712218</td>
+<td>3.0211970074813</td>
+<td>2.737001781228</td></tr>
+<tr>
+<td>GO:0038095</td>
+<td>Fc-epsilon receptor signaling pathway</td>
+<td>9</td>
+<td>140</td>
+<td>337</td>
+<td>16961</td>
+<td>0.00194768274984182</td>
+<td>0.0918794345712218</td>
+<td>3.23545994065282</td>
+<td>2.71048178216669</td></tr>
+<tr>
+<td>GO:0045766</td>
+<td>positive regulation of angiogenesis</td>
+<td>5</td>
+<td>140</td>
+<td>108</td>
+<td>16961</td>
+<td>0.00201350548656657</td>
+<td>0.0918794345712218</td>
+<td>5.6087962962963</td>
+<td>2.69604718265335</td></tr>
+<tr>
+<td>GO:0001662</td>
+<td>behavioral fear response</td>
+<td>3</td>
+<td>140</td>
+<td>32</td>
+<td>16961</td>
+<td>0.00229126297941522</td>
+<td>0.0965383591081315</td>
+<td>11.3578125</td>
+<td>2.63992506185627</td></tr>
+<tr>
+<td>GO:0007219</td>
+<td>Notch signaling pathway</td>
+<td>6</td>
+<td>140</td>
+<td>163</td>
+<td>16961</td>
+<td>0.00233829935556028</td>
+<td>0.0965383591081315</td>
+<td>4.45950920245399</td>
+<td>2.63109989003236</td></tr>
+<tr>
+<td>GO:0001569</td>
+<td>patterning of blood vessels</td>
+<td>3</td>
+<td>140</td>
+<td>34</td>
+<td>16961</td>
+<td>0.00273126309349789</td>
+<td>0.107636595548303</td>
+<td>10.6897058823529</td>
+<td>2.56363646370097</td></tr>
+<tr>
+<td>GO:0031643</td>
+<td>positive regulation of myelination</td>
+<td>2</td>
+<td>140</td>
+<td>11</td>
+<td>16961</td>
+<td>0.00354340849322592</td>
+<td>0.110098733291622</td>
+<td>22.0272727272727</td>
+<td>2.45057877819813</td></tr>
+<tr>
+<td>GO:0035413</td>
+<td>positive regulation of catenin import into nucleus</td>
+<td>2</td>
+<td>140</td>
+<td>11</td>
+<td>16961</td>
+<td>0.00354340849322592</td>
+<td>0.110098733291622</td>
+<td>22.0272727272727</td>
+<td>2.45057877819813</td></tr>
+<tr>
+<td>GO:0042130</td>
+<td>negative regulation of T cell proliferation</td>
+<td>3</td>
+<td>140</td>
+<td>38</td>
+<td>16961</td>
+<td>0.00375904863048629</td>
+<td>0.110098733291622</td>
+<td>9.56447368421053</td>
+<td>2.42492205581978</td></tr>
+<tr>
+<td>GO:0030890</td>
+<td>positive regulation of B cell proliferation</td>
+<td>3</td>
+<td>140</td>
+<td>39</td>
+<td>16961</td>
+<td>0.00404794799688412</td>
+<td>0.110098733291622</td>
+<td>9.31923076923077</td>
+<td>2.39276507542007</td></tr>
+<tr>
+<td>GO:0060487</td>
+<td>lung epithelial cell differentiation</td>
+<td>2</td>
+<td>140</td>
+<td>12</td>
+<td>16961</td>
+<td>0.00422915636356197</td>
+<td>0.110098733291622</td>
+<td>20.1916666666667</td>
+<td>2.37374625749279</td></tr>
+<tr>
+<td>GO:0036120</td>
+<td>cellular response to platelet-derived growth factor stimulus</td>
+<td>2</td>
+<td>140</td>
+<td>12</td>
+<td>16961</td>
+<td>0.00422915636356197</td>
+<td>0.110098733291622</td>
+<td>20.1916666666667</td>
+<td>2.37374625749279</td></tr>
+<tr>
+<td>GO:0003094</td>
+<td>glomerular filtration</td>
+<td>2</td>
+<td>140</td>
+<td>12</td>
+<td>16961</td>
+<td>0.00422915636356197</td>
+<td>0.110098733291622</td>
+<td>20.1916666666667</td>
+<td>2.37374625749279</td></tr>
+<tr>
+<td>GO:0001886</td>
+<td>endothelial cell morphogenesis</td>
+<td>2</td>
+<td>140</td>
+<td>12</td>
+<td>16961</td>
+<td>0.00422915636356197</td>
+<td>0.110098733291622</td>
+<td>20.1916666666667</td>
+<td>2.37374625749279</td></tr>
+<tr>
+<td>GO:0007165</td>
+<td>signal transduction</td>
+<td>29</td>
+<td>140</td>
+<td>2146</td>
+<td>16961</td>
+<td>0.00476259948945025</td>
+<td>0.110098733291622</td>
+<td>1.63716216216216</td>
+<td>2.3221559389241</td></tr>
+<tr>
+<td>GO:0045086</td>
+<td>positive regulation of interleukin-2 biosynthetic process</td>
+<td>2</td>
+<td>140</td>
+<td>13</td>
+<td>16961</td>
+<td>0.00497115395785801</td>
+<td>0.110098733291622</td>
+<td>18.6384615384615</td>
+<td>2.30354278644604</td></tr>
+<tr>
+<td>GO:0050777</td>
+<td>negative regulation of immune response</td>
+<td>2</td>
+<td>140</td>
+<td>15</td>
+<td>16961</td>
+<td>0.00662006286243142</td>
+<td>0.110098733291622</td>
+<td>16.1533333333333</td>
+<td>2.17913788659089</td></tr>
+<tr>
+<td>GO:0007155</td>
+<td>cell adhesion</td>
+<td>12</td>
+<td>140</td>
+<td>645</td>
+<td>16961</td>
+<td>0.00719176869090434</td>
+<td>0.110098733291622</td>
+<td>2.25395348837209</td>
+<td>2.14316428927807</td></tr>
+<tr>
+<td>GO:0051781</td>
+<td>positive regulation of cell division</td>
+<td>3</td>
+<td>140</td>
+<td>49</td>
+<td>16961</td>
+<td>0.00768643214013899</td>
+<td>0.110098733291622</td>
+<td>7.41734693877551</td>
+<td>2.11427520264529</td></tr>
+<tr>
+<td>GO:0030154</td>
+<td>cell differentiation</td>
+<td>14</td>
+<td>140</td>
+<td>820</td>
+<td>16961</td>
+<td>0.00789157328409758</td>
+<td>0.110098733291622</td>
+<td>2.06841463414634</td>
+<td>2.10283640610764</td></tr>
+<tr>
+<td>GO:1901208</td>
+<td>negative regulation of heart looping</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:1901211</td>
+<td>negative regulation of cardiac chamber formation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0003359</td>
+<td>noradrenergic neuron fate commitment</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0051249</td>
+<td>regulation of lymphocyte activation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0051251</td>
+<td>positive regulation of lymphocyte activation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0031620</td>
+<td>regulation of fever generation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0060165</td>
+<td>regulation of timing of subpallium neuron differentiation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0021779</td>
+<td>oligodendrocyte cell fate commitment</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0040032</td>
+<td>post-embryonic body morphogenesis</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0070572</td>
+<td>positive regulation of neuron projection regeneration</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0072213</td>
+<td>metanephric capsule development</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0061100</td>
+<td>lung neuroendocrine cell differentiation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0061102</td>
+<td>stomach neuroendocrine cell differentiation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0061103</td>
+<td>carotid body glomus cell differentiation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0070292</td>
+<td>N-acylphosphatidylethanolamine metabolic process</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0060678</td>
+<td>dichotomous subdivision of terminal units involved in ureteric bud branching</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0070255</td>
+<td>regulation of mucus secretion</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0061185</td>
+<td>negative regulation of dermatome development</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0007400</td>
+<td>neuroblast fate determination</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0072076</td>
+<td>nephrogenic mesenchyme development</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0072267</td>
+<td>metanephric capsule specification</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0007388</td>
+<td>posterior compartment specification</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0007387</td>
+<td>anterior compartment pattern formation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0031279</td>
+<td>regulation of cyclase activity</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0070228</td>
+<td>regulation of lymphocyte apoptotic process</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0035645</td>
+<td>enteric smooth muscle cell differentiation</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0060847</td>
+<td>endothelial cell fate specification</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0002313</td>
+<td>mature B cell differentiation involved in immune response</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0044380</td>
+<td>protein localization to cytoskeleton</td>
+<td>1</td>
+<td>140</td>
+<td>1</td>
+<td>16961</td>
+<td>0.00825423029291283</td>
+<td>0.110098733291622</td>
+<td>121.15</td>
+<td>2.08332341847944</td></tr>
+<tr>
+<td>GO:0007189</td>
+<td>adenylate cyclase-activating G-protein coupled receptor signaling pathway</td>
+<td>3</td>
+<td>140</td>
+<td>51</td>
+<td>16961</td>
+<td>0.00858497608143877</td>
+<td>0.112473481089459</td>
+<td>7.12647058823529</td>
+<td>2.06626091048718</td></tr>
+<tr>
+<td>GO:0007399</td>
+<td>nervous system development</td>
+<td>10</td>
+<td>140</td>
+<td>501</td>
+<td>16961</td>
+<td>0.00869172229872402</td>
+<td>0.112473481089459</td>
+<td>2.41816367265469</td>
+<td>2.06089415787595</td></tr>
+<tr>
+<td>GO:0032753</td>
+<td>positive regulation of interleukin-4 production</td>
+<td>2</td>
+<td>140</td>
+<td>18</td>
+<td>16961</td>
+<td>0.00949163590227123</td>
+<td>0.119264468511147</td>
+<td>13.4611111111111</td>
+<td>2.02265892960633</td></tr>
+<tr>
+<td>GO:0001964</td>
+<td>startle response</td>
+<td>2</td>
+<td>140</td>
+<td>18</td>
+<td>16961</td>
+<td>0.00949163590227123</td>
+<td>0.119264468511147</td>
+<td>13.4611111111111</td>
+<td>2.02265892960633</td></tr>
+<tr>
+<td>GO:0050852</td>
+<td>T cell receptor signaling pathway</td>
+<td>4</td>
+<td>140</td>
+<td>102</td>
+<td>16961</td>
+<td>0.0101297425312046</td>
+<td>0.125399116211435</td>
+<td>4.75098039215686</td>
+<td>1.99440159301071</td></tr>
+<tr>
+<td>GO:0030101</td>
+<td>natural killer cell activation</td>
+<td>2</td>
+<td>140</td>
+<td>19</td>
+<td>16961</td>
+<td>0.010551343745437</td>
+<td>0.125399116211435</td>
+<td>12.7526315789474</td>
+<td>1.97669222813251</td></tr>
+<tr>
+<td>GO:0048546</td>
+<td>digestive tract morphogenesis</td>
+<td>2</td>
+<td>140</td>
+<td>19</td>
+<td>16961</td>
+<td>0.010551343745437</td>
+<td>0.125399116211435</td>
+<td>12.7526315789474</td>
+<td>1.97669222813251</td></tr>
+<tr>
+<td>GO:0070374</td>
+<td>positive regulation of ERK1 and ERK2 cascade</td>
+<td>5</td>
+<td>140</td>
+<td>160</td>
+<td>16961</td>
+<td>0.0105584030950804</td>
+<td>0.125399116211435</td>
+<td>3.7859375</td>
+<td>1.97640176167325</td></tr>
+<tr>
+<td>GO:0001894</td>
+<td>tissue homeostasis</td>
+<td>2</td>
+<td>140</td>
+<td>21</td>
+<td>16961</td>
+<td>0.0128191618959957</td>
+<td>0.132996679712217</td>
+<td>11.5380952380952</td>
+<td>1.89214036762863</td></tr>
+<tr>
+<td>GO:0045669</td>
+<td>positive regulation of osteoblast differentiation</td>
+<td>3</td>
+<td>140</td>
+<td>61</td>
+<td>16961</td>
+<td>0.0139786144478421</td>
+<td>0.132996679712217</td>
+<td>5.95819672131148</td>
+<td>1.85453587347428</td></tr>
+<tr>
+<td>GO:0042326</td>
+<td>negative regulation of phosphorylation</td>
+<td>2</td>
+<td>140</td>
+<td>22</td>
+<td>16961</td>
+<td>0.0140255201312066</td>
+<td>0.132996679712217</td>
+<td>11.0136363636364</td>
+<td>1.85308102412354</td></tr>
+<tr>
+<td>GO:0050870</td>
+<td>positive regulation of T cell activation</td>
+<td>2</td>
+<td>140</td>
+<td>22</td>
+<td>16961</td>
+<td>0.0140255201312066</td>
+<td>0.132996679712217</td>
+<td>11.0136363636364</td>
+<td>1.85308102412354</td></tr>
+<tr>
+<td>GO:0007568</td>
+<td>aging</td>
+<td>5</td>
+<td>140</td>
+<td>175</td>
+<td>16961</td>
+<td>0.0150786987216403</td>
+<td>0.132996679712217</td>
+<td>3.46142857142857</td>
+<td>1.8216361360787</td></tr>
+<tr>
+<td>GO:0030203</td>
+<td>glycosaminoglycan metabolic process</td>
+<td>4</td>
+<td>140</td>
+<td>116</td>
+<td>16961</td>
+<td>0.0156329900934839</td>
+<td>0.132996679712217</td>
+<td>4.17758620689655</td>
+<td>1.80595794732286</td></tr>
+<tr>
+<td>GO:0071259</td>
+<td>cellular response to magnetism</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:2000116</td>
+<td>regulation of cysteine-type endopeptidase activity</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0002228</td>
+<td>natural killer cell mediated immunity</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0060560</td>
+<td>developmental growth involved in morphogenesis</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0039535</td>
+<td>regulation of RIG-I signaling pathway</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0086100</td>
+<td>endothelin receptor signaling pathway</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0060163</td>
+<td>subpallium neuron fate commitment</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:1901299</td>
+<td>negative regulation of hydrogen peroxide-mediated programmed cell death</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0007497</td>
+<td>posterior midgut development</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0001970</td>
+<td>positive regulation of activation of membrane attack complex</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0032290</td>
+<td>peripheral nervous system myelin formation</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0046013</td>
+<td>regulation of T cell homeostatic proliferation</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:2000254</td>
+<td>regulation of male germ cell proliferation</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0061104</td>
+<td>adrenal chromaffin cell differentiation</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0038111</td>
+<td>interleukin-7-mediated signaling pathway</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0060465</td>
+<td>pharynx development</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0003050</td>
+<td>regulation of systemic arterial blood pressure by atrial natriuretic peptide</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0045957</td>
+<td>negative regulation of complement activation, alternative pathway</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0032814</td>
+<td>regulation of natural killer cell activation</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0021750</td>
+<td>vestibular nucleus development</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+<tr>
+<td>GO:0007208</td>
+<td>phospholipase C-activating serotonin receptor signaling pathway</td>
+<td>1</td>
+<td>140</td>
+<td>2</td>
+<td>16961</td>
+<td>0.0164408109399325</td>
+<td>0.132996679712217</td>
+<td>60.575</td>
+<td>1.78407676477335</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p>   <b>GOID:</b>GO-Term ID in GO database</p>
+<p>   <b>DifGene:</b>Dif genes in the GO term</p>
+<p>   <b>AllDifGene:</b>All dif genes</p>
+<p>   <b>GeneInGO:</b>Total genes in the GO term</p>
+<p>   <b>AllGene:</b>Total genes in the GO database</p>
+<p>   <b>P-Value:</b>by Fisher test</p>
+<p>   <b>FDR:</b>Corrected P-value by BH Algorithm</p>
+<p>   <b>Enrichment:</b>(DifGene/AllDifGene)/(GeneInGO/AllGene)</p>
+<p>   <b>(-log2P):</b>The result of the logarithmization of the significance P-value for visualization</p>
+<p>Full GO analysis results see attachment</p>
+<p align="center"><b>File download: <a href="Result/8.GoPathway/GOAnalysis_result" target="_blank">GO Analysis Result File</a></b></p></br>
+</br>
+<h3>KEGG-Pathway analysis of DSTEGs</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>Pathway analysis is based on the KEGG database to find the significant pathways for significant differential gene enrichment. The relevant genes in the analysis results are related in the actual signal pathway.</p>
+<p><b>Methods:</b></p>
+<p>The significant level(P-value) of pathways are based on KEGG database and caculated by Fisher exact test, the negative correlation genes are screened out. </p>
+<p>Among them, the Classical subtype has too few genes to get the enrichment results.</p>
+<p><b>Conclusion:</b></p>
+<p>DSTEGs in<b>thyroid papillary carcinoma Follicular subtyoe</b>are enriched in Hematopoirtic cell lineage, Cytokine-cytokine receptor,NF-kappa B signaling pathways；</p>
+<p>DSTEGs in<b>thyroid papillary carcinom TallCell subtype</b>are enriched in ECM-receptor interaction,Focal adhesion, PI3K-Akt signaling pathway, TGF-beta signaling pathways；</p>
+<p><b>Results:</b></p>
+<p>Pathway analysis results are as followed</p>
+<p></p>
+</br>
+<p align="center"><b>Image:Follicular</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/PathWayAnalysis_result/Follicular.Path-Analysis-Log10P.All.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/PathWayAnalysis_result/Follicular.Path-Analysis-Log10P.All.png" target="_blank" >Image download:Follicular</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:TallCell</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/PathWayAnalysis_result/TallCell.Path-Analysis-Log10P.All.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/PathWayAnalysis_result/TallCell.Path-Analysis-Log10P.All.png" target="_blank" >Image download:TallCell</a></li></ul></div></div></br>
+<p><b>Legand:</b>The Image shows the top 20 p-value in the significant pathway-term:red indicated significant enrichment while blue is for non-significant signal pathways. Y-axis: pathway-term entry name; X-axis: log2(P-Value)</p>
+<p>Pathway enrichement display is as followed</p>
+<p></p>
+</br>
+<p align="center"><b>Image:TallCell</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/PathWayAnalysis_result/TallCell.Path-Analysis-Enrichment.All.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/PathWayAnalysis_result/TallCell.Path-Analysis-Enrichment.All.png" target="_blank" >Image download:TallCell</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:Follicular</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/PathWayAnalysis_result/Follicular.Path-Analysis-Enrichment.All.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/PathWayAnalysis_result/Follicular.Path-Analysis-Enrichment.All.png" target="_blank" >Image download:Follicular</a></li></ul></div></div></br>
+<p><b>Legand:</b>The Image shows the top 20 p-value in the enriched pathway-term:red indicated significant enrichment while blue is for non-significant signal pathways. Y-axis: pathway-term entry name; X-axis: log2(P-Value)</p>
+<p>Pathway analysis results are as follows</p>
+<p></p>
+<p align="center"><b>Table:Follicular</b>(maximum display 100 lines)(<a href="Result/8.GoPathway/PathWayAnalysis_result/Follicular.Pathway-Analysis_All.xlsx" target="_blank">File Download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">PathwayID</th>
+<th class="sort-string-robust top-header-row ">PathwayTerm</th>
+<th class="sort-string-robust top-header-row ">DifGene</th>
+<th class="sort-string-robust top-header-row ">AllDifGene</th>
+<th class="sort-string-robust top-header-row ">GeneInPathway</th>
+<th class="sort-string-robust top-header-row ">AllGene</th>
+<th class="sort-string-robust top-header-row ">P-Value</th>
+<th class="sort-string-robust top-header-row ">FDR</th>
+<th class="sort-string-robust top-header-row ">Enrichment</th>
+<th class="sort-string-robust top-header-row ">(-log10P)</th></tr></thead>
+<tbody>
+<tr>
+<td>PATH:04640</td>
+<td>Hematopoietic cell lineage</td>
+<td>8</td>
+<td>54</td>
+<td>88</td>
+<td>6782</td>
+<td>3.72330752379631e-07</td>
+<td>4.5424351790315e-05</td>
+<td>11.4175084175084</td>
+<td>6.42907109207273</td></tr>
+<tr>
+<td>PATH:04060</td>
+<td>Cytokine-cytokine receptor interaction</td>
+<td>9</td>
+<td>54</td>
+<td>265</td>
+<td>6782</td>
+<td>0.00021031289226992</td>
+<td>0.0128290864284651</td>
+<td>4.26540880503145</td>
+<td>3.67713410406085</td></tr>
+<tr>
+<td>PATH:04064</td>
+<td>NF-kappa B signaling pathway</td>
+<td>5</td>
+<td>54</td>
+<td>91</td>
+<td>6782</td>
+<td>0.000733450774277437</td>
+<td>0.0298269981539491</td>
+<td>6.9006919006919</td>
+<td>3.1346290286197</td></tr>
+<tr>
+<td>PATH:04610</td>
+<td>Complement and coagulation cascades</td>
+<td>4</td>
+<td>54</td>
+<td>69</td>
+<td>6782</td>
+<td>0.00211638289323987</td>
+<td>0.0575376225571034</td>
+<td>7.28073000536769</td>
+<td>2.67440575753572</td></tr>
+<tr>
+<td>PATH:05020</td>
+<td>Prion diseases</td>
+<td>3</td>
+<td>54</td>
+<td>36</td>
+<td>6782</td>
+<td>0.00282971914215262</td>
+<td>0.0575376225571034</td>
+<td>10.466049382716</td>
+<td>2.54825666732599</td></tr>
+<tr>
+<td>PATH:05340</td>
+<td>Primary immunodeficiency</td>
+<td>3</td>
+<td>54</td>
+<td>36</td>
+<td>6782</td>
+<td>0.00282971914215262</td>
+<td>0.0575376225571034</td>
+<td>10.466049382716</td>
+<td>2.54825666732599</td></tr>
+<tr>
+<td>PATH:04080</td>
+<td>Neuroactive ligand-receptor interaction</td>
+<td>7</td>
+<td>54</td>
+<td>275</td>
+<td>6782</td>
+<td>0.00577255815098121</td>
+<td>0.100607442059958</td>
+<td>3.19690235690236</td>
+<td>2.23863168343927</td></tr>
+<tr>
+<td>PATH:05144</td>
+<td>Malaria</td>
+<td>3</td>
+<td>54</td>
+<td>52</td>
+<td>6782</td>
+<td>0.0080085966737468</td>
+<td>0.122131099274639</td>
+<td>7.24572649572649</td>
+<td>2.0964435775789</td></tr>
+<tr>
+<td>PATH:05150</td>
+<td>Staphylococcus aureus infection</td>
+<td>3</td>
+<td>54</td>
+<td>55</td>
+<td>6782</td>
+<td>0.00934922095144888</td>
+<td>0.126733884008529</td>
+<td>6.85050505050505</td>
+<td>2.0292245763556</td></tr>
+<tr>
+<td>PATH:05202</td>
+<td>Transcriptional misregulation in cancer</td>
+<td>5</td>
+<td>54</td>
+<td>180</td>
+<td>6782</td>
+<td>0.013778632709796</td>
+<td>0.168099319059511</td>
+<td>3.48868312757202</td>
+<td>1.86079387648153</td></tr>
+<tr>
+<td>PATH:04724</td>
+<td>Glutamatergic synapse</td>
+<td>4</td>
+<td>54</td>
+<td>130</td>
+<td>6782</td>
+<td>0.0194785560972011</td>
+<td>0.21603489489623</td>
+<td>3.86438746438746</td>
+<td>1.71044323956518</td></tr>
+<tr>
+<td>PATH:05162</td>
+<td>Measles</td>
+<td>4</td>
+<td>54</td>
+<td>134</td>
+<td>6782</td>
+<td>0.0215145414089478</td>
+<td>0.218731170990969</td>
+<td>3.74903261470426</td>
+<td>1.66726790664329</td></tr>
+<tr>
+<td>PATH:04514</td>
+<td>Cell adhesion molecules (CAMs)</td>
+<td>4</td>
+<td>54</td>
+<td>142</td>
+<td>6782</td>
+<td>0.0259683732334289</td>
+<td>0.243703194959871</td>
+<td>3.53781950965049</td>
+<td>1.58555525552563</td></tr>
+<tr>
+<td>PATH:05142</td>
+<td>Chagas disease (American trypanosomiasis)</td>
+<td>3</td>
+<td>54</td>
+<td>104</td>
+<td>6782</td>
+<td>0.0494806171248319</td>
+<td>0.423197918620444</td>
+<td>3.62286324786325</td>
+<td>1.30556489246576</td></tr>
+<tr>
+<td>PATH:04660</td>
+<td>T cell receptor signaling pathway</td>
+<td>3</td>
+<td>54</td>
+<td>109</td>
+<td>6782</td>
+<td>0.0554991703412247</td>
+<td>0.423197918620444</td>
+<td>3.45667686034658</td>
+<td>1.25571350911014</td></tr>
+<tr>
+<td>PATH:05166</td>
+<td>HTLV-I infection</td>
+<td>5</td>
+<td>54</td>
+<td>264</td>
+<td>6782</td>
+<td>0.0578302717216549</td>
+<td>0.423197918620444</td>
+<td>2.37864758698092</td>
+<td>1.237844767113</td></tr>
+<tr>
+<td>PATH:04020</td>
+<td>Calcium signaling pathway</td>
+<td>4</td>
+<td>54</td>
+<td>185</td>
+<td>6782</td>
+<td>0.0589702017749799</td>
+<td>0.423197918620444</td>
+<td>2.71551551551552</td>
+<td>1.22936738621896</td></tr>
+<tr>
+<td>PATH:00130</td>
+<td>Ubiquinone and other terpenoid-quinone biosynthesis</td>
+<td>1</td>
+<td>54</td>
+<td>10</td>
+<td>6782</td>
+<td>0.0768785908353305</td>
+<td>0.503518559735939</td>
+<td>12.5592592592593</td>
+<td>1.11419458577199</td></tr>
+<tr>
+<td>PATH:04726</td>
+<td>Serotonergic synapse</td>
+<td>3</td>
+<td>54</td>
+<td>126</td>
+<td>6782</td>
+<td>0.0784168248769085</td>
+<td>0.503518559735939</td>
+<td>2.99029982363316</td>
+<td>1.10559074640657</td></tr>
+<tr>
+<td>PATH:04650</td>
+<td>Natural killer cell mediated cytotoxicity</td>
+<td>3</td>
+<td>54</td>
+<td>138</td>
+<td>6782</td>
+<td>0.0967195320713276</td>
+<td>0.557073626436058</td>
+<td>2.73027375201288</td>
+<td>1.014485813257</td></tr>
+<tr>
+<td>PATH:05140</td>
+<td>Leishmaniasis</td>
+<td>2</td>
+<td>54</td>
+<td>72</td>
+<td>6782</td>
+<td>0.111872751350406</td>
+<td>0.557073626436058</td>
+<td>3.48868312757202</td>
+<td>0.951275680935697</td></tr>
+<tr>
+<td>PATH:04730</td>
+<td>Long-term depression</td>
+<td>2</td>
+<td>54</td>
+<td>73</td>
+<td>6782</td>
+<td>0.114459225941794</td>
+<td>0.557073626436058</td>
+<td>3.44089294774226</td>
+<td>0.941349195439201</td></tr>
+<tr>
+<td>PATH:05133</td>
+<td>Pertussis</td>
+<td>2</td>
+<td>54</td>
+<td>75</td>
+<td>6782</td>
+<td>0.119678567776492</td>
+<td>0.557073626436058</td>
+<td>3.34913580246914</td>
+<td>0.921983616759762</td></tr>
+<tr>
+<td>PATH:05200</td>
+<td>Pathways in cancer</td>
+<td>5</td>
+<td>54</td>
+<td>330</td>
+<td>6782</td>
+<td>0.120704825181115</td>
+<td>0.557073626436058</td>
+<td>1.90291806958474</td>
+<td>0.918275368613115</td></tr>
+<tr>
+<td>PATH:04151</td>
+<td>PI3K-Akt signaling pathway</td>
+<td>5</td>
+<td>54</td>
+<td>347</td>
+<td>6782</td>
+<td>0.140735371823918</td>
+<td>0.557073626436058</td>
+<td>1.80969153591632</td>
+<td>0.851596735135989</td></tr>
+<tr>
+<td>PATH:05132</td>
+<td>Salmonella infection</td>
+<td>2</td>
+<td>54</td>
+<td>86</td>
+<td>6782</td>
+<td>0.149362165322385</td>
+<td>0.557073626436058</td>
+<td>2.9207579672696</td>
+<td>0.825759398990774</td></tr>
+<tr>
+<td>PATH:04350</td>
+<td>TGF-beta signaling pathway</td>
+<td>2</td>
+<td>54</td>
+<td>86</td>
+<td>6782</td>
+<td>0.149362165322385</td>
+<td>0.557073626436058</td>
+<td>2.9207579672696</td>
+<td>0.825759398990774</td></tr>
+<tr>
+<td>PATH:05222</td>
+<td>Small cell lung cancer</td>
+<td>2</td>
+<td>54</td>
+<td>89</td>
+<td>6782</td>
+<td>0.157703916193231</td>
+<td>0.557073626436058</td>
+<td>2.82230545151893</td>
+<td>0.802157521889913</td></tr>
+<tr>
+<td>PATH:04210</td>
+<td>Apoptosis</td>
+<td>2</td>
+<td>54</td>
+<td>90</td>
+<td>6782</td>
+<td>0.160504508238128</td>
+<td>0.557073626436058</td>
+<td>2.79094650205761</td>
+<td>0.794512764658204</td></tr>
+<tr>
+<td>PATH:05414</td>
+<td>Dilated cardiomyopathy</td>
+<td>2</td>
+<td>54</td>
+<td>90</td>
+<td>6782</td>
+<td>0.160504508238128</td>
+<td>0.557073626436058</td>
+<td>2.79094650205761</td>
+<td>0.794512764658204</td></tr>
+<tr>
+<td>PATH:04540</td>
+<td>Gap junction</td>
+<td>2</td>
+<td>54</td>
+<td>90</td>
+<td>6782</td>
+<td>0.160504508238128</td>
+<td>0.557073626436058</td>
+<td>2.79094650205761</td>
+<td>0.794512764658204</td></tr>
+<tr>
+<td>PATH:05323</td>
+<td>Rheumatoid arthritis</td>
+<td>2</td>
+<td>54</td>
+<td>91</td>
+<td>6782</td>
+<td>0.16331456117204</td>
+<td>0.557073626436058</td>
+<td>2.76027676027676</td>
+<td>0.786975091719295</td></tr>
+<tr>
+<td>PATH:05032</td>
+<td>Morphine addiction</td>
+<td>2</td>
+<td>54</td>
+<td>93</td>
+<td>6782</td>
+<td>0.168961776286163</td>
+<td>0.557073626436058</td>
+<td>2.70091596973317</td>
+<td>0.772211533407503</td></tr>
+<tr>
+<td>PATH:04320</td>
+<td>Dorso-ventral axis formation</td>
+<td>1</td>
+<td>54</td>
+<td>24</td>
+<td>6782</td>
+<td>0.174846869042799</td>
+<td>0.557073626436058</td>
+<td>5.23302469135802</td>
+<td>0.757342140132603</td></tr>
+<tr>
+<td>PATH:04977</td>
+<td>Vitamin digestion and absorption</td>
+<td>1</td>
+<td>54</td>
+<td>24</td>
+<td>6782</td>
+<td>0.174846869042799</td>
+<td>0.557073626436058</td>
+<td>5.23302469135802</td>
+<td>0.757342140132603</td></tr>
+<tr>
+<td>PATH:00601</td>
+<td>Glycosphingolipid biosynthesis - lacto and neolacto series</td>
+<td>1</td>
+<td>54</td>
+<td>25</td>
+<td>6782</td>
+<td>0.181440279675015</td>
+<td>0.557073626436058</td>
+<td>5.0237037037037</td>
+<td>0.741266293358053</td></tr>
+<tr>
+<td>PATH:00592</td>
+<td>alpha-Linolenic acid metabolism</td>
+<td>1</td>
+<td>54</td>
+<td>25</td>
+<td>6782</td>
+<td>0.181440279675015</td>
+<td>0.557073626436058</td>
+<td>5.0237037037037</td>
+<td>0.741266293358053</td></tr>
+<tr>
+<td>PATH:04750</td>
+<td>Inflammatory mediator regulation of TRP channels</td>
+<td>2</td>
+<td>54</td>
+<td>99</td>
+<td>6782</td>
+<td>0.186098138337346</td>
+<td>0.557073626436058</td>
+<td>2.53722409277965</td>
+<td>0.730257971382192</td></tr>
+<tr>
+<td>PATH:04915</td>
+<td>Estrogen signaling pathway</td>
+<td>2</td>
+<td>54</td>
+<td>100</td>
+<td>6782</td>
+<td>0.188979472427591</td>
+<td>0.557073626436058</td>
+<td>2.51185185185185</td>
+<td>0.723585367761123</td></tr>
+<tr>
+<td>PATH:04972</td>
+<td>Pancreatic secretion</td>
+<td>2</td>
+<td>54</td>
+<td>101</td>
+<td>6782</td>
+<td>0.191867261573497</td>
+<td>0.557073626436058</td>
+<td>2.48698203153649</td>
+<td>0.716999122872294</td></tr>
+<tr>
+<td>PATH:04916</td>
+<td>Melanogenesis</td>
+<td>2</td>
+<td>54</td>
+<td>101</td>
+<td>6782</td>
+<td>0.191867261573497</td>
+<td>0.557073626436058</td>
+<td>2.48698203153649</td>
+<td>0.716999122872294</td></tr>
+<tr>
+<td>PATH:04062</td>
+<td>Chemokine signaling pathway</td>
+<td>3</td>
+<td>54</td>
+<td>191</td>
+<td>6782</td>
+<td>0.194106509351999</td>
+<td>0.557073626436058</td>
+<td>1.97265852239674</td>
+<td>0.711959900323887</td></tr>
+<tr>
+<td>PATH:04912</td>
+<td>GnRH signaling pathway</td>
+<td>2</td>
+<td>54</td>
+<td>104</td>
+<td>6782</td>
+<td>0.200566595035722</td>
+<td>0.557073626436058</td>
+<td>2.41524216524216</td>
+<td>0.697741398333189</td></tr>
+<tr>
+<td>PATH:00760</td>
+<td>Nicotinate and nicotinamide metabolism</td>
+<td>1</td>
+<td>54</td>
+<td>28</td>
+<td>6782</td>
+<td>0.20091179969825</td>
+<td>0.557073626436058</td>
+<td>4.48544973544974</td>
+<td>0.696994556067325</td></tr>
+<tr>
+<td>PATH:05146</td>
+<td>Amoebiasis</td>
+<td>2</td>
+<td>54</td>
+<td>109</td>
+<td>6782</td>
+<td>0.21516935494848</td>
+<td>0.566291283226701</td>
+<td>2.30445124023106</td>
+<td>0.667219582097097</td></tr>
+<tr>
+<td>PATH:04510</td>
+<td>Focal adhesion</td>
+<td>3</td>
+<td>54</td>
+<td>207</td>
+<td>6782</td>
+<td>0.227298215019951</td>
+<td>0.566291283226701</td>
+<td>1.82018250134192</td>
+<td>0.643403974789898</td></tr>
+<tr>
+<td>PATH:00591</td>
+<td>Linoleic acid metabolism</td>
+<td>1</td>
+<td>54</td>
+<td>34</td>
+<td>6782</td>
+<td>0.238500858434819</td>
+<td>0.566291283226701</td>
+<td>3.69389978213508</td>
+<td>0.62251005346733</td></tr>
+<tr>
+<td>PATH:04015</td>
+<td>Rap1 signaling pathway</td>
+<td>3</td>
+<td>54</td>
+<td>213</td>
+<td>6782</td>
+<td>0.240034004338276</td>
+<td>0.566291283226701</td>
+<td>1.76890975482525</td>
+<td>0.619727229745144</td></tr>
+<tr>
+<td>PATH:04270</td>
+<td>Vascular smooth muscle contraction</td>
+<td>2</td>
+<td>54</td>
+<td>121</td>
+<td>6782</td>
+<td>0.250577139231405</td>
+<td>0.566291283226701</td>
+<td>2.07591062136517</td>
+<td>0.601058553288122</td></tr>
+<tr>
+<td>PATH:05205</td>
+<td>Proteoglycans in cancer</td>
+<td>3</td>
+<td>54</td>
+<td>225</td>
+<td>6782</td>
+<td>0.265864097407788</td>
+<td>0.566291283226701</td>
+<td>1.67456790123457</td>
+<td>0.575340306333108</td></tr>
+<tr>
+<td>PATH:04014</td>
+<td>Ras signaling pathway</td>
+<td>3</td>
+<td>54</td>
+<td>227</td>
+<td>6782</td>
+<td>0.27020722995934</td>
+<td>0.566291283226701</td>
+<td>1.65981399902105</td>
+<td>0.568303034701709</td></tr>
+<tr>
+<td>PATH:05033</td>
+<td>Nicotine addiction</td>
+<td>1</td>
+<td>54</td>
+<td>40</td>
+<td>6782</td>
+<td>0.274352955453652</td>
+<td>0.566291283226701</td>
+<td>3.13981481481481</td>
+<td>0.561690357026863</td></tr>
+<tr>
+<td>PATH:05332</td>
+<td>Graft-versus-host disease</td>
+<td>1</td>
+<td>54</td>
+<td>40</td>
+<td>6782</td>
+<td>0.274352955453652</td>
+<td>0.566291283226701</td>
+<td>3.13981481481481</td>
+<td>0.561690357026863</td></tr>
+<tr>
+<td>PATH:04360</td>
+<td>Axon guidance</td>
+<td>2</td>
+<td>54</td>
+<td>131</td>
+<td>6782</td>
+<td>0.280252814006971</td>
+<td>0.566291283226701</td>
+<td>1.91744416171897</td>
+<td>0.552450017978078</td></tr>
+<tr>
+<td>PATH:00565</td>
+<td>Ether lipid metabolism</td>
+<td>1</td>
+<td>54</td>
+<td>42</td>
+<td>6782</td>
+<td>0.285931388511081</td>
+<td>0.566291283226701</td>
+<td>2.99029982363316</td>
+<td>0.543738166751481</td></tr>
+<tr>
+<td>PATH:04068</td>
+<td>FoxO signaling pathway</td>
+<td>2</td>
+<td>54</td>
+<td>133</td>
+<td>6782</td>
+<td>0.286187237735575</td>
+<td>0.566291283226701</td>
+<td>1.8886104149262</td>
+<td>0.543349737119212</td></tr>
+<tr>
+<td>PATH:04380</td>
+<td>Osteoclast differentiation</td>
+<td>2</td>
+<td>54</td>
+<td>133</td>
+<td>6782</td>
+<td>0.286187237735575</td>
+<td>0.566291283226701</td>
+<td>1.8886104149262</td>
+<td>0.543349737119212</td></tr>
+<tr>
+<td>PATH:04940</td>
+<td>Type I diabetes mellitus</td>
+<td>1</td>
+<td>54</td>
+<td>43</td>
+<td>6782</td>
+<td>0.291652412996586</td>
+<td>0.566291283226701</td>
+<td>2.9207579672696</td>
+<td>0.535134426068297</td></tr>
+<tr>
+<td>PATH:05145</td>
+<td>Toxoplasmosis</td>
+<td>2</td>
+<td>54</td>
+<td>135</td>
+<td>6782</td>
+<td>0.29211805393666</td>
+<td>0.566291283226701</td>
+<td>1.86063100137174</td>
+<td>0.534441601250447</td></tr>
+<tr>
+<td>PATH:05322</td>
+<td>Systemic lupus erythematosus</td>
+<td>2</td>
+<td>54</td>
+<td>136</td>
+<td>6782</td>
+<td>0.295081683721048</td>
+<td>0.566291283226701</td>
+<td>1.84694989106754</td>
+<td>0.530057747144409</td></tr>
+<tr>
+<td>PATH:04962</td>
+<td>Vasopressin-regulated water reabsorption</td>
+<td>1</td>
+<td>54</td>
+<td>45</td>
+<td>6782</td>
+<td>0.302959827321186</td>
+<td>0.566291283226701</td>
+<td>2.79094650205761</td>
+<td>0.518614955423134</td></tr>
+<tr>
+<td>PATH:04975</td>
+<td>Fat digestion and absorption</td>
+<td>1</td>
+<td>54</td>
+<td>46</td>
+<td>6782</td>
+<td>0.308546909012347</td>
+<td>0.566291283226701</td>
+<td>2.73027375201288</td>
+<td>0.510678799940261</td></tr>
+<tr>
+<td>PATH:04330</td>
+<td>Notch signaling pathway</td>
+<td>1</td>
+<td>54</td>
+<td>48</td>
+<td>6782</td>
+<td>0.319589531452189</td>
+<td>0.566291283226701</td>
+<td>2.61651234567901</td>
+<td>0.49540745497447</td></tr>
+<tr>
+<td>PATH:04672</td>
+<td>Intestinal immune network for IgA production</td>
+<td>1</td>
+<td>54</td>
+<td>48</td>
+<td>6782</td>
+<td>0.319589531452189</td>
+<td>0.566291283226701</td>
+<td>2.61651234567901</td>
+<td>0.49540745497447</td></tr>
+<tr>
+<td>PATH:04961</td>
+<td>Endocrine and other factor-regulated calcium reabsorption</td>
+<td>1</td>
+<td>54</td>
+<td>49</td>
+<td>6782</td>
+<td>0.325045748455271</td>
+<td>0.566291283226701</td>
+<td>2.56311413454271</td>
+<td>0.488055510087478</td></tr>
+<tr>
+<td>PATH:00510</td>
+<td>N-Glycan biosynthesis</td>
+<td>1</td>
+<td>54</td>
+<td>49</td>
+<td>6782</td>
+<td>0.325045748455271</td>
+<td>0.566291283226701</td>
+<td>2.56311413454271</td>
+<td>0.488055510087478</td></tr>
+<tr>
+<td>PATH:05030</td>
+<td>Cocaine addiction</td>
+<td>1</td>
+<td>54</td>
+<td>50</td>
+<td>6782</td>
+<td>0.330459015877364</td>
+<td>0.566291283226701</td>
+<td>2.51185185185185</td>
+<td>0.48088239482283</td></tr>
+<tr>
+<td>PATH:04261</td>
+<td>Adrenergic signaling in cardiomyocytes</td>
+<td>2</td>
+<td>54</td>
+<td>149</td>
+<td>6782</td>
+<td>0.333424046250954</td>
+<td>0.566291283226701</td>
+<td>1.68580661198111</td>
+<td>0.477003082439882</td></tr>
+<tr>
+<td>PATH:04978</td>
+<td>Mineral absorption</td>
+<td>1</td>
+<td>54</td>
+<td>51</td>
+<td>6782</td>
+<td>0.33582966548948</td>
+<td>0.566291283226701</td>
+<td>2.46259985475672</td>
+<td>0.473880943131462</td></tr>
+<tr>
+<td>PATH:04913</td>
+<td>Ovarian steroidogenesis</td>
+<td>1</td>
+<td>54</td>
+<td>51</td>
+<td>6782</td>
+<td>0.33582966548948</td>
+<td>0.566291283226701</td>
+<td>2.46259985475672</td>
+<td>0.473880943131462</td></tr>
+<tr>
+<td>PATH:04310</td>
+<td>Wnt signaling pathway</td>
+<td>2</td>
+<td>54</td>
+<td>153</td>
+<td>6782</td>
+<td>0.345122815330231</td>
+<td>0.566291283226701</td>
+<td>1.64173323650448</td>
+<td>0.46202632948134</td></tr>
+<tr>
+<td>PATH:04742</td>
+<td>Taste transduction</td>
+<td>1</td>
+<td>54</td>
+<td>53</td>
+<td>6782</td>
+<td>0.346444425704521</td>
+<td>0.566291283226701</td>
+<td>2.3696715583508</td>
+<td>0.460366422078423</td></tr>
+<tr>
+<td>PATH:05110</td>
+<td>Vibrio cholerae infection</td>
+<td>1</td>
+<td>54</td>
+<td>54</td>
+<td>6782</td>
+<td>0.35168918733876</td>
+<td>0.566291283226701</td>
+<td>2.32578875171468</td>
+<td>0.453840983833463</td></tr>
+<tr>
+<td>PATH:04630</td>
+<td>Jak-STAT signaling pathway</td>
+<td>2</td>
+<td>54</td>
+<td>157</td>
+<td>6782</td>
+<td>0.356760114043977</td>
+<td>0.566291283226701</td>
+<td>1.5999056381222</td>
+<td>0.447623705918359</td></tr>
+<tr>
+<td>PATH:05134</td>
+<td>Legionellosis</td>
+<td>1</td>
+<td>54</td>
+<td>55</td>
+<td>6782</td>
+<td>0.356892633219937</td>
+<td>0.566291283226701</td>
+<td>2.28350168350168</td>
+<td>0.447462416417974</td></tr>
+<tr>
+<td>PATH:05217</td>
+<td>Basal cell carcinoma</td>
+<td>1</td>
+<td>54</td>
+<td>55</td>
+<td>6782</td>
+<td>0.356892633219937</td>
+<td>0.566291283226701</td>
+<td>2.28350168350168</td>
+<td>0.447462416417974</td></tr>
+<tr>
+<td>PATH:04921</td>
+<td>Oxytocin signaling pathway</td>
+<td>2</td>
+<td>54</td>
+<td>158</td>
+<td>6782</td>
+<td>0.359658924807499</td>
+<td>0.566291283226701</td>
+<td>1.58977965307079</td>
+<td>0.444109158367344</td></tr>
+<tr>
+<td>PATH:04340</td>
+<td>Hedgehog signaling pathway</td>
+<td>1</td>
+<td>54</td>
+<td>56</td>
+<td>6782</td>
+<td>0.36205508271871</td>
+<td>0.566291283226701</td>
+<td>2.24272486772487</td>
+<td>0.441225351287422</td></tr>
+<tr>
+<td>PATH:05221</td>
+<td>Acute myeloid leukemia</td>
+<td>1</td>
+<td>54</td>
+<td>57</td>
+<td>6782</td>
+<td>0.367176852793616</td>
+<td>0.567032608111659</td>
+<td>2.2033788174139</td>
+<td>0.435124704978595</td></tr>
+<tr>
+<td>PATH:04010</td>
+<td>MAPK signaling pathway</td>
+<td>3</td>
+<td>54</td>
+<td>275</td>
+<td>6782</td>
+<td>0.375692929594525</td>
+<td>0.57293171763165</td>
+<td>1.37010101010101</td>
+<td>0.425166978125268</td></tr>
+<tr>
+<td>PATH:04621</td>
+<td>NOD-like receptor signaling pathway</td>
+<td>1</td>
+<td>54</td>
+<td>62</td>
+<td>6782</td>
+<td>0.392186437798941</td>
+<td>0.590700560635442</td>
+<td>2.02568697729988</td>
+<td>0.406507428748097</td></tr>
+<tr>
+<td>PATH:04623</td>
+<td>Cytosolic DNA-sensing pathway</td>
+<td>1</td>
+<td>54</td>
+<td>63</td>
+<td>6782</td>
+<td>0.397070653922185</td>
+<td>0.590763655835446</td>
+<td>1.99353321575544</td>
+<td>0.401132208908446</td></tr>
+<tr>
+<td>PATH:05321</td>
+<td>Inflammatory bowel disease (IBD)</td>
+<td>1</td>
+<td>54</td>
+<td>65</td>
+<td>6782</td>
+<td>0.40672380314975</td>
+<td>0.595536486473965</td>
+<td>1.93219373219373</td>
+<td>0.390700410152374</td></tr>
+<tr>
+<td>PATH:05152</td>
+<td>Tuberculosis</td>
+<td>2</td>
+<td>54</td>
+<td>179</td>
+<td>6782</td>
+<td>0.419349769274489</td>
+<td>0.595536486473965</td>
+<td>1.40326919097869</td>
+<td>0.377423591594522</td></tr>
+<tr>
+<td>PATH:00590</td>
+<td>Arachidonic acid metabolism</td>
+<td>1</td>
+<td>54</td>
+<td>68</td>
+<td>6782</td>
+<td>0.420919758778634</td>
+<td>0.595536486473965</td>
+<td>1.84694989106754</td>
+<td>0.375800687159748</td></tr>
+<tr>
+<td>PATH:05031</td>
+<td>Amphetamine addiction</td>
+<td>1</td>
+<td>54</td>
+<td>70</td>
+<td>6782</td>
+<td>0.430197951020966</td>
+<td>0.595536486473965</td>
+<td>1.79417989417989</td>
+<td>0.366331662433928</td></tr>
+<tr>
+<td>PATH:05211</td>
+<td>Renal cell carcinoma</td>
+<td>1</td>
+<td>54</td>
+<td>70</td>
+<td>6782</td>
+<td>0.430197951020966</td>
+<td>0.595536486473965</td>
+<td>1.79417989417989</td>
+<td>0.366331662433928</td></tr>
+<tr>
+<td>PATH:05218</td>
+<td>Melanoma</td>
+<td>1</td>
+<td>54</td>
+<td>71</td>
+<td>6782</td>
+<td>0.43478217490156</td>
+<td>0.595536486473965</td>
+<td>1.76890975482525</td>
+<td>0.361728269324884</td></tr>
+<tr>
+<td>PATH:04976</td>
+<td>Bile secretion</td>
+<td>1</td>
+<td>54</td>
+<td>72</td>
+<td>6782</td>
+<td>0.43933019493981</td>
+<td>0.595536486473965</td>
+<td>1.74434156378601</td>
+<td>0.357208946871059</td></tr>
+<tr>
+<td>PATH:04918</td>
+<td>Thyroid hormone synthesis</td>
+<td>1</td>
+<td>54</td>
+<td>72</td>
+<td>6782</td>
+<td>0.43933019493981</td>
+<td>0.595536486473965</td>
+<td>1.74434156378601</td>
+<td>0.357208946871059</td></tr>
+<tr>
+<td>PATH:05412</td>
+<td>Arrhythmogenic right ventricular cardiomyopathy (ARVC)</td>
+<td>1</td>
+<td>54</td>
+<td>74</td>
+<td>6782</td>
+<td>0.448318743701409</td>
+<td>0.599722898835998</td>
+<td>1.6971971971972</td>
+<td>0.348413103391799</td></tr>
+<tr>
+<td>PATH:04971</td>
+<td>Gastric acid secretion</td>
+<td>1</td>
+<td>54</td>
+<td>75</td>
+<td>6782</td>
+<td>0.452759827160343</td>
+<td>0.599722898835998</td>
+<td>1.67456790123457</td>
+<td>0.344132114541917</td></tr>
+<tr>
+<td>PATH:04612</td>
+<td>Antigen processing and presentation</td>
+<td>1</td>
+<td>54</td>
+<td>76</td>
+<td>6782</td>
+<td>0.457165816325802</td>
+<td>0.599722898835998</td>
+<td>1.65253411306043</td>
+<td>0.339926250577923</td></tr>
+<tr>
+<td>PATH:04260</td>
+<td>Cardiac muscle contraction</td>
+<td>1</td>
+<td>54</td>
+<td>78</td>
+<td>6782</td>
+<td>0.465873598226208</td>
+<td>0.603804877273659</td>
+<td>1.61016144349478</td>
+<td>0.331731900991071</td></tr>
+<tr>
+<td>PATH:04370</td>
+<td>VEGF signaling pathway</td>
+<td>1</td>
+<td>54</td>
+<td>79</td>
+<td>6782</td>
+<td>0.470175929024571</td>
+<td>0.603804877273659</td>
+<td>1.58977965307079</td>
+<td>0.327739608642375</td></tr>
+<tr>
+<td>PATH:05410</td>
+<td>Hypertrophic cardiomyopathy (HCM)</td>
+<td>1</td>
+<td>54</td>
+<td>83</td>
+<td>6782</td>
+<td>0.487047700318368</td>
+<td>0.61257545813238</td>
+<td>1.51316376617581</td>
+<td>0.312428502911482</td></tr>
+<tr>
+<td>PATH:04664</td>
+<td>Fc epsilon RI signaling pathway</td>
+<td>1</td>
+<td>54</td>
+<td>83</td>
+<td>6782</td>
+<td>0.487047700318368</td>
+<td>0.61257545813238</td>
+<td>1.51316376617581</td>
+<td>0.312428502911482</td></tr>
+<tr>
+<td>PATH:04911</td>
+<td>Insulin secretion</td>
+<td>1</td>
+<td>54</td>
+<td>87</td>
+<td>6782</td>
+<td>0.503391842666909</td>
+<td>0.616355310072274</td>
+<td>1.44359301830566</td>
+<td>0.298093826359076</td></tr>
+<tr>
+<td>PATH:04974</td>
+<td>Protein digestion and absorption</td>
+<td>1</td>
+<td>54</td>
+<td>89</td>
+<td>6782</td>
+<td>0.511371134323836</td>
+<td>0.616355310072274</td>
+<td>1.41115272575947</td>
+<td>0.291263790501484</td></tr>
+<tr>
+<td>PATH:04512</td>
+<td>ECM-receptor interaction</td>
+<td>1</td>
+<td>54</td>
+<td>89</td>
+<td>6782</td>
+<td>0.511371134323836</td>
+<td>0.616355310072274</td>
+<td>1.41115272575947</td>
+<td>0.291263790501484</td></tr>
+</tbody></table>
+</div>
+</br>
+<p align="center"><b>Table:TallCell</b>(maximum display 100 lines)(<a href="Result/8.GoPathway/PathWayAnalysis_result/TallCell.Pathway-Analysis_All.xlsx" target="_blank">File Download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">PathwayID</th>
+<th class="sort-string-robust top-header-row ">PathwayTerm</th>
+<th class="sort-string-robust top-header-row ">DifGene</th>
+<th class="sort-string-robust top-header-row ">AllDifGene</th>
+<th class="sort-string-robust top-header-row ">GeneInPathway</th>
+<th class="sort-string-robust top-header-row ">AllGene</th>
+<th class="sort-string-robust top-header-row ">P-Value</th>
+<th class="sort-string-robust top-header-row ">FDR</th>
+<th class="sort-string-robust top-header-row ">Enrichment</th>
+<th class="sort-string-robust top-header-row ">(-log10P)</th></tr></thead>
+<tbody>
+<tr>
+<td>PATH:04512</td>
+<td>ECM-receptor interaction</td>
+<td>4</td>
+<td>12</td>
+<td>89</td>
+<td>6782</td>
+<td>1.26605792017552e-05</td>
+<td>0.000696331856096537</td>
+<td>25.4007490636704</td>
+<td>4.89754642556888</td></tr>
+<tr>
+<td>PATH:04510</td>
+<td>Focal adhesion</td>
+<td>4</td>
+<td>12</td>
+<td>207</td>
+<td>6782</td>
+<td>0.000344186418602389</td>
+<td>0.0094651265115657</td>
+<td>10.9210950080515</td>
+<td>3.46320627068019</td></tr>
+<tr>
+<td>PATH:04151</td>
+<td>PI3K-Akt signaling pathway</td>
+<td>4</td>
+<td>12</td>
+<td>347</td>
+<td>6782</td>
+<td>0.00240223897016223</td>
+<td>0.0440410477863076</td>
+<td>6.51488952929875</td>
+<td>2.61938379199534</td></tr>
+<tr>
+<td>PATH:04350</td>
+<td>TGF-beta signaling pathway</td>
+<td>2</td>
+<td>12</td>
+<td>86</td>
+<td>6782</td>
+<td>0.00965922696591806</td>
+<td>0.113503766962915</td>
+<td>13.1434108527132</td>
+<td>2.01505762905758</td></tr>
+<tr>
+<td>PATH:04974</td>
+<td>Protein digestion and absorption</td>
+<td>2</td>
+<td>12</td>
+<td>89</td>
+<td>6782</td>
+<td>0.010318524269356</td>
+<td>0.113503766962915</td>
+<td>12.7003745318352</td>
+<td>1.98638241002503</td></tr>
+<tr>
+<td>PATH:04611</td>
+<td>Platelet activation</td>
+<td>2</td>
+<td>12</td>
+<td>131</td>
+<td>6782</td>
+<td>0.0215300994815287</td>
+<td>0.197359245247346</td>
+<td>8.62849872773537</td>
+<td>1.66695396347985</td></tr>
+<tr>
+<td>PATH:04145</td>
+<td>Phagosome</td>
+<td>2</td>
+<td>12</td>
+<td>154</td>
+<td>6782</td>
+<td>0.0291232797792647</td>
+<td>0.228825769694222</td>
+<td>7.33982683982684</td>
+<td>1.5357597176204</td></tr>
+<tr>
+<td>PATH:05310</td>
+<td>Asthma</td>
+<td>1</td>
+<td>12</td>
+<td>30</td>
+<td>6782</td>
+<td>0.0518501550272857</td>
+<td>0.297876481885104</td>
+<td>18.8388888888889</td>
+<td>1.28524994077168</td></tr>
+<tr>
+<td>PATH:05330</td>
+<td>Allograft rejection</td>
+<td>1</td>
+<td>12</td>
+<td>37</td>
+<td>6782</td>
+<td>0.0635883409144599</td>
+<td>0.297876481885104</td>
+<td>15.2747747747748</td>
+<td>1.19662250606049</td></tr>
+<tr>
+<td>PATH:05332</td>
+<td>Graft-versus-host disease</td>
+<td>1</td>
+<td>12</td>
+<td>40</td>
+<td>6782</td>
+<td>0.0685780906364881</td>
+<td>0.297876481885104</td>
+<td>14.1291666666667</td>
+<td>1.16381461075769</td></tr>
+<tr>
+<td>PATH:04940</td>
+<td>Type I diabetes mellitus</td>
+<td>1</td>
+<td>12</td>
+<td>43</td>
+<td>6782</td>
+<td>0.0735434569106485</td>
+<td>0.297876481885104</td>
+<td>13.1434108527132</td>
+<td>1.13345595997254</td></tr>
+<tr>
+<td>PATH:04973</td>
+<td>Carbohydrate digestion and absorption</td>
+<td>1</td>
+<td>12</td>
+<td>45</td>
+<td>6782</td>
+<td>0.0768402082685249</td>
+<td>0.297876481885104</td>
+<td>12.5592592592593</td>
+<td>1.11441146669233</td></tr>
+<tr>
+<td>PATH:04672</td>
+<td>Intestinal immune network for IgA production</td>
+<td>1</td>
+<td>12</td>
+<td>48</td>
+<td>6782</td>
+<td>0.081765176071725</td>
+<td>0.297876481885104</td>
+<td>11.7743055555556</td>
+<td>1.08743162371334</td></tr>
+<tr>
+<td>PATH:05144</td>
+<td>Malaria</td>
+<td>1</td>
+<td>12</td>
+<td>52</td>
+<td>6782</td>
+<td>0.0882943365851448</td>
+<td>0.297876481885104</td>
+<td>10.8685897435897</td>
+<td>1.05406715224011</td></tr>
+<tr>
+<td>PATH:05320</td>
+<td>Autoimmune thyroid disease</td>
+<td>1</td>
+<td>12</td>
+<td>52</td>
+<td>6782</td>
+<td>0.0882943365851448</td>
+<td>0.297876481885104</td>
+<td>10.8685897435897</td>
+<td>1.05406715224011</td></tr>
+<tr>
+<td>PATH:05150</td>
+<td>Staphylococcus aureus infection</td>
+<td>1</td>
+<td>12</td>
+<td>55</td>
+<td>6782</td>
+<td>0.0931632484438056</td>
+<td>0.297876481885104</td>
+<td>10.2757575757576</td>
+<td>1.03075537676441</td></tr>
+<tr>
+<td>PATH:00500</td>
+<td>Starch and sucrose metabolism</td>
+<td>1</td>
+<td>12</td>
+<td>56</td>
+<td>6782</td>
+<td>0.0947809147167134</td>
+<td>0.297876481885104</td>
+<td>10.0922619047619</td>
+<td>1.02327910430401</td></tr>
+<tr>
+<td>PATH:05321</td>
+<td>Inflammatory bowel disease (IBD)</td>
+<td>1</td>
+<td>12</td>
+<td>65</td>
+<td>6782</td>
+<td>0.109221329992861</td>
+<td>0.297876481885104</td>
+<td>8.69487179487179</td>
+<td>0.961692539345581</td></tr>
+<tr>
+<td>PATH:05416</td>
+<td>Viral myocarditis</td>
+<td>1</td>
+<td>12</td>
+<td>70</td>
+<td>6782</td>
+<td>0.117152236967703</td>
+<td>0.297876481885104</td>
+<td>8.07380952380952</td>
+<td>0.931249414335867</td></tr>
+<tr>
+<td>PATH:05140</td>
+<td>Leishmaniasis</td>
+<td>1</td>
+<td>12</td>
+<td>72</td>
+<td>6782</td>
+<td>0.120306435625882</td>
+<td>0.297876481885104</td>
+<td>7.84953703703704</td>
+<td>0.919711140057905</td></tr>
+<tr>
+<td>PATH:05412</td>
+<td>Arrhythmogenic right ventricular cardiomyopathy (ARVC)</td>
+<td>1</td>
+<td>12</td>
+<td>74</td>
+<td>6782</td>
+<td>0.123450301127557</td>
+<td>0.297876481885104</td>
+<td>7.63738738738739</td>
+<td>0.908507846372981</td></tr>
+<tr>
+<td>PATH:04612</td>
+<td>Antigen processing and presentation</td>
+<td>1</td>
+<td>12</td>
+<td>76</td>
+<td>6782</td>
+<td>0.126583864256965</td>
+<td>0.297876481885104</td>
+<td>7.43640350877193</td>
+<td>0.897621650643931</td></tr>
+<tr>
+<td>PATH:05410</td>
+<td>Hypertrophic cardiomyopathy (HCM)</td>
+<td>1</td>
+<td>12</td>
+<td>83</td>
+<td>6782</td>
+<td>0.137470646501102</td>
+<td>0.297876481885104</td>
+<td>6.80923694779116</td>
+<td>0.861790024913846</td></tr>
+<tr>
+<td>PATH:04727</td>
+<td>GABAergic synapse</td>
+<td>1</td>
+<td>12</td>
+<td>90</td>
+<td>6782</td>
+<td>0.148232908165801</td>
+<td>0.297876481885104</td>
+<td>6.27962962962963</td>
+<td>0.829055370929676</td></tr>
+<tr>
+<td>PATH:05414</td>
+<td>Dilated cardiomyopathy</td>
+<td>1</td>
+<td>12</td>
+<td>90</td>
+<td>6782</td>
+<td>0.148232908165801</td>
+<td>0.297876481885104</td>
+<td>6.27962962962963</td>
+<td>0.829055370929676</td></tr>
+<tr>
+<td>PATH:05323</td>
+<td>Rheumatoid arthritis</td>
+<td>1</td>
+<td>12</td>
+<td>91</td>
+<td>6782</td>
+<td>0.149760284897772</td>
+<td>0.297876481885104</td>
+<td>6.21062271062271</td>
+<td>0.824603342421324</td></tr>
+<tr>
+<td>PATH:05032</td>
+<td>Morphine addiction</td>
+<td>1</td>
+<td>12</td>
+<td>93</td>
+<td>6782</td>
+<td>0.152807509100551</td>
+<td>0.297876481885104</td>
+<td>6.07706093189964</td>
+<td>0.81585530360847</td></tr>
+<tr>
+<td>PATH:04713</td>
+<td>Circadian entrainment</td>
+<td>1</td>
+<td>12</td>
+<td>97</td>
+<td>6782</td>
+<td>0.158871945356631</td>
+<td>0.297876481885104</td>
+<td>5.82646048109966</td>
+<td>0.798952786571769</td></tr>
+<tr>
+<td>PATH:04915</td>
+<td>Estrogen signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>100</td>
+<td>6782</td>
+<td>0.163394129559692</td>
+<td>0.297876481885104</td>
+<td>5.65166666666667</td>
+<td>0.786763550898039</td></tr>
+<tr>
+<td>PATH:04972</td>
+<td>Pancreatic secretion</td>
+<td>1</td>
+<td>12</td>
+<td>101</td>
+<td>6782</td>
+<td>0.164896564523432</td>
+<td>0.297876481885104</td>
+<td>5.5957095709571</td>
+<td>0.7827883924092</td></tr>
+<tr>
+<td>PATH:04723</td>
+<td>Retrograde endocannabinoid signaling</td>
+<td>1</td>
+<td>12</td>
+<td>103</td>
+<td>6782</td>
+<td>0.167894017062513</td>
+<td>0.297876481885104</td>
+<td>5.48705501618123</td>
+<td>0.774964779758509</td></tr>
+<tr>
+<td>PATH:05146</td>
+<td>Amoebiasis</td>
+<td>1</td>
+<td>12</td>
+<td>109</td>
+<td>6782</td>
+<td>0.176827301517832</td>
+<td>0.303921924483773</td>
+<td>5.18501529051988</td>
+<td>0.752450680594648</td></tr>
+<tr>
+<td>PATH:04725</td>
+<td>Cholinergic synapse</td>
+<td>1</td>
+<td>12</td>
+<td>113</td>
+<td>6782</td>
+<td>0.18273389111714</td>
+<td>0.304556485195233</td>
+<td>5.00147492625369</td>
+<td>0.738180897857338</td></tr>
+<tr>
+<td>PATH:04726</td>
+<td>Serotonergic synapse</td>
+<td>1</td>
+<td>12</td>
+<td>126</td>
+<td>6782</td>
+<td>0.20166304039458</td>
+<td>0.312558496352522</td>
+<td>4.48544973544973</td>
+<td>0.69537368940992</td></tr>
+<tr>
+<td>PATH:04728</td>
+<td>Dopaminergic synapse</td>
+<td>1</td>
+<td>12</td>
+<td>131</td>
+<td>6782</td>
+<td>0.2088358329913</td>
+<td>0.312558496352522</td>
+<td>4.31424936386768</td>
+<td>0.680194981075856</td></tr>
+<tr>
+<td>PATH:04068</td>
+<td>FoxO signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>133</td>
+<td>6782</td>
+<td>0.211688371815632</td>
+<td>0.312558496352522</td>
+<td>4.24937343358396</td>
+<td>0.674302997412824</td></tr>
+<tr>
+<td>PATH:05145</td>
+<td>Toxoplasmosis</td>
+<td>1</td>
+<td>12</td>
+<td>135</td>
+<td>6782</td>
+<td>0.214531480052735</td>
+<td>0.312558496352522</td>
+<td>4.18641975308642</td>
+<td>0.668508971031392</td></tr>
+<tr>
+<td>PATH:05322</td>
+<td>Systemic lupus erythematosus</td>
+<td>1</td>
+<td>12</td>
+<td>136</td>
+<td>6782</td>
+<td>0.215949506570834</td>
+<td>0.312558496352522</td>
+<td>4.15563725490196</td>
+<td>0.665647783947156</td></tr>
+<tr>
+<td>PATH:04514</td>
+<td>Cell adhesion molecules (CAMs)</td>
+<td>1</td>
+<td>12</td>
+<td>142</td>
+<td>6782</td>
+<td>0.224408501695222</td>
+<td>0.316473528031723</td>
+<td>3.98004694835681</td>
+<td>0.648960693898137</td></tr>
+<tr>
+<td>PATH:04390</td>
+<td>Hippo signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>153</td>
+<td>6782</td>
+<td>0.239699730844124</td>
+<td>0.329587129910671</td>
+<td>3.69389978213508</td>
+<td>0.620332453629998</td></tr>
+<tr>
+<td>PATH:04921</td>
+<td>Oxytocin signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>158</td>
+<td>6782</td>
+<td>0.246558506953176</td>
+<td>0.330749216644504</td>
+<td>3.57700421940928</td>
+<td>0.608080008508687</td></tr>
+<tr>
+<td>PATH:04022</td>
+<td>cGMP-PKG signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>167</td>
+<td>6782</td>
+<td>0.258761554693897</td>
+<td>0.336359381231438</td>
+<td>3.38423153692615</td>
+<td>0.587100248191032</td></tr>
+<tr>
+<td>PATH:05164</td>
+<td>Influenza A</td>
+<td>1</td>
+<td>12</td>
+<td>175</td>
+<td>6782</td>
+<td>0.269456328151466</td>
+<td>0.336359381231438</td>
+<td>3.22952380952381</td>
+<td>0.569511612591279</td></tr>
+<tr>
+<td>PATH:05152</td>
+<td>Tuberculosis</td>
+<td>1</td>
+<td>12</td>
+<td>179</td>
+<td>6782</td>
+<td>0.27475050085342</td>
+<td>0.336359381231438</td>
+<td>3.15735567970205</td>
+<td>0.561061507211375</td></tr>
+<tr>
+<td>PATH:05202</td>
+<td>Transcriptional misregulation in cancer</td>
+<td>1</td>
+<td>12</td>
+<td>180</td>
+<td>6782</td>
+<td>0.27606853719857</td>
+<td>0.336359381231438</td>
+<td>3.13981481481481</td>
+<td>0.558983085934617</td></tr>
+<tr>
+<td>PATH:05168</td>
+<td>Herpes simplex infection</td>
+<td>1</td>
+<td>12</td>
+<td>184</td>
+<td>6782</td>
+<td>0.281318755211748</td>
+<td>0.336359381231438</td>
+<td>3.07155797101449</td>
+<td>0.550801312934535</td></tr>
+<tr>
+<td>PATH:04062</td>
+<td>Chemokine signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>191</td>
+<td>6782</td>
+<td>0.29042272659261</td>
+<td>0.339856382182841</td>
+<td>2.95898778359511</td>
+<td>0.536969401582238</td></tr>
+<tr>
+<td>PATH:05169</td>
+<td>Epstein-Barr virus infection</td>
+<td>1</td>
+<td>12</td>
+<td>201</td>
+<td>6782</td>
+<td>0.303245100517121</td>
+<td>0.347468344342535</td>
+<td>2.81177446102819</td>
+<td>0.518206207231604</td></tr>
+<tr>
+<td>PATH:04015</td>
+<td>Rap1 signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>213</td>
+<td>6782</td>
+<td>0.318351445022755</td>
+<td>0.35701233783555</td>
+<td>2.65336463223787</td>
+<td>0.497093174498162</td></tr>
+<tr>
+<td>PATH:04810</td>
+<td>Regulation of actin cytoskeleton</td>
+<td>1</td>
+<td>12</td>
+<td>218</td>
+<td>6782</td>
+<td>0.324556670759591</td>
+<td>0.35701233783555</td>
+<td>2.59250764525994</td>
+<td>0.488709460190821</td></tr>
+<tr>
+<td>PATH:04014</td>
+<td>Ras signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>227</td>
+<td>6782</td>
+<td>0.335595755779775</td>
+<td>0.361916991527208</td>
+<td>2.48972099853157</td>
+<td>0.474183540254181</td></tr>
+<tr>
+<td>PATH:05166</td>
+<td>HTLV-I infection</td>
+<td>1</td>
+<td>12</td>
+<td>264</td>
+<td>6782</td>
+<td>0.379263236075271</td>
+<td>0.394760992095925</td>
+<td>2.14078282828283</td>
+<td>0.42105925364171</td></tr>
+<tr>
+<td>PATH:04060</td>
+<td>Cytokine-cytokine receptor interaction</td>
+<td>1</td>
+<td>12</td>
+<td>265</td>
+<td>6782</td>
+<td>0.380406046928801</td>
+<td>0.394760992095925</td>
+<td>2.13270440251572</td>
+<td>0.419752588141201</td></tr>
+<tr>
+<td>PATH:04010</td>
+<td>MAPK signaling pathway</td>
+<td>1</td>
+<td>12</td>
+<td>275</td>
+<td>6782</td>
+<td>0.391728550749157</td>
+<td>0.398982783170438</td>
+<td>2.05515151515152</td>
+<td>0.407014774173497</td></tr>
+<tr>
+<td>PATH:01100</td>
+<td>Metabolic pathways</td>
+<td>1</td>
+<td>12</td>
+<td>1168</td>
+<td>6782</td>
+<td>0.896701249668094</td>
+<td>0.896701249668094</td>
+<td>0.483875570776256</td>
+<td>0.0473522249956246</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>Table note:</b></p>
+<p>    <b>DifGene:</b>Numbers of differential gene in the signal pathway</p>
+<p>    <b>AllDifGene:</b>Total differential gene</p>
+<p>    <b>GeneInPathway:</b>the number of gene annotations in the Pathway term recorded in the KEGG database</p>
+<p>    <b>AllGene:</b>Total genes in the KEGG database</p>
+<p>    <b>P-Value:</b>Significant enrichment of genes obtained by Fisher's exact test</p>
+<p>    <b>FDR:</b>Results of correcting P-Value using BH algorithm</p>
+<p>    <b>Enrichment:</b>(DifGene/AllDifGene)/(GeneInPathway/AllGene)</p>
+<p>    <b>(-log2P):</b>the result of the logatithmization of P-value</p>
+<p>All KEGG Pathway results are shown in the attachment</p>
+<p align="center"><b>File download: <a href="Result/8.GoPathway/PathWayAnalysis_result" target="_blank">Pathway Analysis Result</a></b></p></br>
+</br>
+<h3>Comparision of GOpath enrichment in different subtypes</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p><b>Methods</b></p>
+<p>In order to better compare the enrichment of GO and KEGG result, the enrichment scatter plots of genes in each subtype are plotted.</p>
+<p>The degree of enrichment in the graph is measured by the Rich Factor, P_value, and the number of genes enriched in this pathway. Rich factor refers to the ratio of the number of differential genes enriched in the pathway to the number of annotated genes.The larger the rich factor, the greater the degree of enrichment. </p>
+<p><b>Conclusion：</b></p>
+<p>The enrichment scatter plot of the pathway shows that the <b>Tallcell subtype is enriched in ECM receptor interaction,Follicular subtype is enriched in Hematopoietic cell lineage. </b></p>
+<p>GO enrichment scatter plot shows that <b>Classical subtype is enriched in water transport,fluid transport, excretion, odontogenesis, inoorganic anion transport</b></p>
+<p><b>Follicular subtype is enriched in complement activation, classical pathway,humoral immune response mediated by circulating immunoglobulin, lymphocyte meditaed immunity</b></p>
+<p><b>Results</b></p>
+<p></p>
+</br>
+<p align="center"><b>Image:Pathway enrichment scatter plot</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/EnrichCompare/enrichKEGG.compare.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/EnrichCompare/enrichKEGG.compare.pdf" target="_blank" >Image download:Pathway富集性散点图</a></li></ul></div></div></br>
+<p></p>
+</br>
+<p align="center"><b>Image:GO enrichment scatter plot</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/8.GoPathway/EnrichCompare/enrichGO.compare.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/8.GoPathway/EnrichCompare/enrichGO.compare.pdf" target="_blank" >Image download:GO富集性散点图</a></li></ul></div></div></br>
+<p><b>Legand:</b>Y-axis indicated GO term or KEGG pathways, X-axis is cancer subtypes;the size of the point shows the number of the genes included, and the color is the P-Value size.</p>
+<p>See the attachment for all comparison results</p>
+<p align="center"><b>File Download: <a href="Result/8.GoPathway/EnrichCompare" target="_blank">EnrichCompare</a></b></p></br>
+<p></p>
+</br>
+<h3>KEGG signak pathway diagram</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p><b>Next, we select the results from the GO terms and KEGG pathways enrichment, the pathways and biological processes associated with thyroid cancer are selected and mapped. </b></p>
+<p><b>Results:</b></p>
+<p>Follicular subtype enrichment signling pathways are as followed:</p>
+<p></p>
+</br>
+<p align="center"><b>Image:hsa04064</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/9.PathviewPlot/Follicular/hsa04064.pathview.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/9.PathviewPlot/Follicular/hsa04064.pathview.png" target="_blank" >Image download:hsa04064</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:hsa05202</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/9.PathviewPlot/Follicular/hsa05202.pathview.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/9.PathviewPlot/Follicular/hsa05202.pathview.png" target="_blank" >Image download:hsa05202</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:hsa04060</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/9.PathviewPlot/Follicular/hsa04060.pathview.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/9.PathviewPlot/Follicular/hsa04060.pathview.png" target="_blank" >Image download:hsa04060</a></li></ul></div></div></br>
+<p>TallCell subtype enrichment signling pathways are as followed:</p>
+<p></p>
+</br>
+<p align="center"><b>Image:hsa04151</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/9.PathviewPlot/TallCell/hsa04151.pathview.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/9.PathviewPlot/TallCell/hsa04151.pathview.png" target="_blank" >Image download:hsa04151</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:hsa04350</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/9.PathviewPlot/TallCell/hsa04350.pathview.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/9.PathviewPlot/TallCell/hsa04350.pathview.png" target="_blank" >Image download:hsa04350</a></li></ul></div></div></br>
+</br>
+<p align="center"><b>Image:hsa04510</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/9.PathviewPlot/TallCell/hsa04510.pathview.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/9.PathviewPlot/TallCell/hsa04510.pathview.png" target="_blank" >Image download:hsa04510</a></li></ul></div></div></br>
+<p><b>Legand:</b></p>
+<p>   <b>Title:</b>pathway ID</p>
+<p>   <b>box:</b>genes or proteins,the letter in the box is the gene name, the number is the EC number, the color represents the expression fold change of the gene </p>
+<p>   <b>circle:</b>represent metabolites</p>
+<p>   <b>square:</b>other signaling diagram</p>
+<p>   <b>arrows:</b>indicated the relationship between molecular, solid arrows indicated molecular relationships in the diagram</p>
+<p>See the attachment for the full analysis results</p>
+<p align="center"><b>File Download: <a href="Result/9.PathviewPlot" target="_blank">PathviewPlot analysis results</a></b></p></br>
+<p></p>
+
+
+			</div>
+		</div>	
+    </div>
+
+<nav class="navbar navbar-default">
+	<div class="navbar-inner navbar-content-center">
+		<p class="text-muted credit" style="padding: 10px;" align="center"><a href="javascript:scroll(0,0)"><font size="4">>>返回顶部<<</font></a></p>
+	</div>
+</nav>
+
+	<div id="footer" class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-inner navbar-content-center">
+			</div>
+		</nav>
+	</div>
+</body>
+</html>

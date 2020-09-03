@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="./library/css/bootstrap.min.css" rel="stylesheet">
+            </head>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <br>
+            </div>
+            <div class="col-md-9">
+                <h2 align="center">Papillary Thyroid Carcinoma related diagnostic biomarker target development and targeted drug selection </h2>
+                <h4 align="center">Author: Qianhui Yang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Research use only</h4>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-3" >
+                <div class="navbar navbar-default" role="navigation">
+                    <ul class="nav">
+                        <li><a href="section1.html">1.Intro(Introduction)</a></li>
+                        <li><a href="section2.html">2.Query(Genetic expression and clinical data from TCGA)</a></li>
+                        <li><a href="section3.html">3.DifGene(Screening differentially expressed genes of each subtype)</a></li>
+                        <li><a href="section4.html">4.seriescluster(Analyzing the differentially expressed genes of each subtype distinguished from other subtypes)</a></li>
+                        <li><a href="section5.html">5.Boxplot(DEG box plot)</a></li>
+                        <li><a href="section6.html">6.GOPathway(DEG KEGG and GO analysis)</a></li>
+                        <li><a href="section7.html">7.Mutation(analysis of the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section8.html">8.expressinmutdrivergene(analysis od the correlation between specific genes of each subtype and typical mutant gene)</a></li>
+                        <li><a href="section9.html">9.Stargene(specific gene and immune correlation analysis of each subtype)</a></li>
+                        <li><a href="section10.html">10.ImmuneScore(analysis of the correlation between specific genes and immune index and immune cell abundance of each subtype)</a></li>
+                        <li><a href="section11.html">11.GenePanel(screening  survival-related gene panels in the classical subtype)</a></li>
+                        <li><a href="section12.html">12.GenePanel(screening the gene panel associated with lymph node involvement in each subtype)</a></li>
+                        <li><a href="section13.html">13.GeneSelect(the status of each subtype screening gene)</a></li>
+                        <li><a href="section14.html">14.Cmap(analysis of the correlation between genes associated with lymph node involvement in various subtype)</a></li>
+                        <li><a href="section15.html">15.Tool(software and database)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                </br>
+<h3>Screening for survival-related gene panels in the Classical subtype</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>Among the three subtypes, only the Classical subtype has a poor prognosis sample, so the subtype may be screened for a gene panel that may be related to survival.</p>
+<p>In statistics and machine learning, the Lasso algorithm (least absolute shrinkage and selection operator) is a simultaneous regression method for feature selection and regularization (mathematics). , designed to enhance the predictive accuracy and interpretability of statistical models. Lasso is a linear regression method using L1 regularization. Using L1 positive will make the partially learned feature weights 0, thus achieving the purpose of thinning and selecting variables and constructing the best model.</p>
+<p>LASSO regression is characterized by variable selection and regularization while fitting a generalized linear model. Therefore, whether the dependent/response varaible is continuous or binary or discrete, it can be modeled and predicted using LASSO regression. Variable filtering here means not putting all the variables into the model for fitting, but selectively putting the variables into the model to get better performance parameters.</p>
+<p><b>Methods:</b></p>
+<p>single-factor Cox regression is performed on all differentially expressed genes in the classical subtype.</p>
+<p>For the single factor significant gene, Lasso algorithm is used to select the best gene model based on COX multi-factor regression model.</p>
+<p><b>Result:</b></p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Cox multi-factor regression forest map</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/13.GenePanel/Riskscore/multi_forestplot.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/13.GenePanel/Riskscore/multi_forestplot.png" target="_blank" >Figure download:Cox multi-factor forest map</a></li></ul></div></div></br>
+<p><b>Legend:</b>The left side of the picture is the significant factor name, Cox regression coefficient, and risk ratio. In the middle of the picture is the forest map with the risk ratio, the horizontal line represents the confidence interval interval, and the point represents the risk ratio. On the right side of the picture is the confidence interval for the risk ratio of 95 and the hypothesis test P value.
+
+</p>
+<p></p>
+<p align="center"><b>Table:Cox multi-factor regression results</b>(Maximim 100 lines are shown)(<a href="Result/13.GenePanel/Riskscore/multi_res.txt" target="_blank">Table download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">features</th>
+<th class="sort-string-robust top-header-row ">multi_beta</th>
+<th class="sort-string-robust top-header-row ">multi_HR</th>
+<th class="sort-string-robust top-header-row ">multi_95%_CI_for_HR</th>
+<th class="sort-string-robust top-header-row ">multi_p.value</th></tr></thead>
+<tbody>
+<tr>
+<td>ANKRD18CP</td>
+<td>0.00759694</td>
+<td>1.00763</td>
+<td>0.940825-1.07917</td>
+<td>0.828157
+</td></tr>
+<tr>
+<td>ARGFXP1</td>
+<td>0.0209871</td>
+<td>1.02121</td>
+<td>0.833727-1.25085</td>
+<td>0.839297
+</td></tr>
+<tr>
+<td>C8orf17</td>
+<td>0.545083</td>
+<td>1.72475</td>
+<td>1.02164-2.91176</td>
+<td>0.0413417
+</td></tr>
+<tr>
+<td>LCE5A</td>
+<td>0.0159052</td>
+<td>1.01603</td>
+<td>0.641947-1.60811</td>
+<td>0.945871
+</td></tr>
+<tr>
+<td>LTK</td>
+<td>0.00106234</td>
+<td>1.00106</td>
+<td>1.00014-1.00199</td>
+<td>0.0241206
+</td></tr>
+<tr>
+<td>MIR1273E</td>
+<td>0.0415832</td>
+<td>1.04246</td>
+<td>0.614285-1.76908</td>
+<td>0.877529
+</td></tr>
+<tr>
+<td>OPALIN</td>
+<td>0.405695</td>
+<td>1.50034</td>
+<td>1.01952-2.20795</td>
+<td>0.0395895
+</td></tr>
+<tr>
+<td>PGLYRP4</td>
+<td>0.0531277</td>
+<td>1.05456</td>
+<td>0.874352-1.27192</td>
+<td>0.578451
+</td></tr>
+<tr>
+<td>RPS27P18</td>
+<td>0.21096</td>
+<td>1.23486</td>
+<td>0.958085-1.5916</td>
+<td>0.103256
+</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>table note:</b><b>features:</b>significant factor name</p>
+<p>   <b>multi_beta:</b>Cox multi-factor regression partial regression coefficient</p>
+<p>   <b>multi_HR:</b>Cox multi-factor regression risk ratio 95% confidence interval</p>
+<p>   <b>multi 95% CI for HR:</b>Cox multi-factor regression risk ratio 95% confidence interval </p>
+<p>   <b>multi_p.value:</b>Cox multi-factor regression propoetional risk hypothesis, test P value</p>
+</br>
+<h3>Risk Index Analysis of Survival related Gene Panel in Classical subtype</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p>For the gene panel obtained above, we calculated the Risk Score for each sample based on the expression and multivariate regression coefficients.</p>
+<p>The samples were divided into high-index group and low-index group according to the risk index. Kaplan-Meier survival analysis was performed to plot the survival curve and the ROC curve of one-year, three-year and five-year survival.。</p>
+<p><b>Results:</b></p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Risk Score KM plot</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/13.GenePanel/Riskscore/risk_score_kmplot.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/13.GenePanel/Riskscore/risk_score_kmplot.pdf" target="_blank" >Figure download:Risk Score KM plot</a></li></ul></div></div></br>
+<p><b>Legend:</b> The horizontal axis represents time (unit: year), the vertical axis represents survival, the flat curve represents high survival or longer survival, and the steep curve represents low survival or shorter survival. The red line represents the case of the high index group and the blue line represents the case of the low index group.</p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Risk Score ROC curve</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/13.GenePanel/Riskscore/risk_score_roc.pdf.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/13.GenePanel/Riskscore/risk_score_roc.pdf" target="_blank" >Figure download:Risk Score ROC curve</a></li></ul></div></div></br>
+<p><b>Legend:</b>The horizontal axis is the false positive rate FP, the vertical axis is the true positive rate TP, and the upper left corner legend corresponds to the AUC value of the ROC curve for different lifetimes.</p>
+</br>
+<h3>Survival Analysis of Gene Panel combined with clinical informaiotn in classical subtype</h3>
+<hr style=" height:3px;border:none;border-top:2px dotted #185598;" />
+<p><b>By plotting survival and ROC curves, we found that the gene panel risk index correlates with the survival of patients with a Classical subtype.</b></p>
+<p><b>We further combined the clinical information of the gene panel, and performed a Cox regression univariate analysis based on the gene panel risk index and the patient's age, tumor primary tumor, lymph node involvement and immune index. Significant factors were selected for Cox multivariate regression.</b></p>
+<p><b>Results:</b></p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Cox single factor regression forest plot</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/13.GenePanel/Riskscore.multi/univ_forestplot.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/13.GenePanel/Riskscore.multi/univ_forestplot.png" target="_blank" >Figure download:Cox single factor regression forest plot</a></li></ul></div></div></br>
+<p><b>Legend:</b>The left side of the picture is the gene name, Cox regression coefficient, and risk ratio. In the middle of the picture is the forest map with the risk ratio, the horizontal line represents the confidence interval interval, and the point represents the risk ratio. On the right side of the picture is the confidence interval for the risk ratio of 95 and the hypothesis test P value.</p>
+<p></p>
+</br>
+<p align="center"><b>Figure:Cox multi-factor regression forest plot</b></p>
+<div class="row"><div class="col-md-10"><img src="Result/13.GenePanel/Riskscore.multi/MultiCox_forestplot.png" height="100%" width="100%" /></img></div><div class="col-md-2 row pre-scrollable" style="overflow-x: auto; overflow-y: auto; height: 350px;"></br><ul class="list-unstyled"><li><a href="Result/13.GenePanel/Riskscore.multi/MultiCox_forestplot.png" target="_blank" >Figure download:Cox multi-factor regression forest plot</a></li></ul></div></div></br>
+<p><b>Legend:</b>The left side of the picture is the gene name, Cox regression coefficient, and risk ratio. In the middle of the picture is the forest map with the risk ratio, the horizontal line represents the confidence interval interval, and the point represents the risk r</p>
+<p></p>
+<p align="center"><b>Table:multi-factor regression</b>(Maximim 100 lines are shown)(<a href="Result/13.GenePanel/Riskscore.multi/univ_multi_cox_res.txt" target="_blank">table download</a>)</p>
+<div class="panel panel-default" style="overflow-x: auto; overflow-y: auto; height: 200px;">
+<table cellpadding="1" cellspacing="0" border="0" class="dataTable table table-hover table-condensed">
+<thead><tr>
+<th class="sort-string-robust top-header-row ">Sig_features</th>
+<th class="sort-string-robust top-header-row ">univ_beta</th>
+<th class="sort-string-robust top-header-row ">univ_HR</th>
+<th class="sort-string-robust top-header-row ">univ_95% CI for HR</th>
+<th class="sort-string-robust top-header-row ">univ_p.value</th>
+<th class="sort-string-robust top-header-row ">multi_beta</th>
+<th class="sort-string-robust top-header-row ">multi_HR</th>
+<th class="sort-string-robust top-header-row ">multi_95% CI for HR</th>
+<th class="sort-string-robust top-header-row ">multi_p.value</th></tr></thead>
+<tbody>
+<tr>
+<td>RiskScore</td>
+<td>1.1</td>
+<td>3</td>
+<td>2-4.7</td>
+<td>6.919e-07</td>
+<td>0.79</td>
+<td>2.2</td>
+<td>1.3-3.6</td>
+<td>0.001777
+</td></tr>
+<tr>
+<td>pathologic_T</td>
+<td>1</td>
+<td>2.8</td>
+<td>1.2-6.4</td>
+<td>0.01959</td>
+<td>0.0049</td>
+<td>1</td>
+<td>0.41-2.5</td>
+<td>0.9914
+</td></tr>
+<tr>
+<td>age</td>
+<td>0.083</td>
+<td>1.1</td>
+<td>1-1.1</td>
+<td>2.26e-05</td>
+<td>0.052</td>
+<td>1.1</td>
+<td>1-1.1</td>
+<td>0.01497
+</td></tr>
+</tbody></table>
+</div>
+</br>
+<p><b>table note:Sig_features:</b>Significant factor name</p>
+<p>   <b>univ_beta:</b>Cox regression coefficient</p>
+<p>   <b>univ_HR:</b>Cox regression risk score</p>
+<p>   <b>univ 95% CI for HR:</b>Cox single factor regression risk ratio 95% confidence interval</p>
+<p>   <b>univ_p.value:</b>Cox single factor regression proportional risk hypothesis test P value</p>
+<p>   <b>multi_beta:</b>Cox multi-factor regression partial regression coefficient</p>
+<p>   <b>multi_HR:</b>Cox multi-factor regression risk score</p>
+<p>   <b>multi 95% CI for HR:</b>Cox multi-factor regression risk ratio 95% confidence interval</p>
+<p>   <b>multi_p.value:</b>Cox multi-factor regression proportional risk hypothesis test P value</p>
+<p>From the result we can see that, the age and tumor primary site are factors that affect the prognosis of patients, while the Cox multivariate analysis indicated that the risk score is more of an independent factor. </p>
+<p></p>
+<p align="center"><b>File Download: <a href="Result/13.GenePanel" target="_blank">GenePanel</a></b></p></br>
+<p></p>
+
+
+			</div>
+		</div>	
+    </div>
+
+<nav class="navbar navbar-default">
+	<div class="navbar-inner navbar-content-center">
+		<p class="text-muted credit" style="padding: 10px;" align="center"><a href="javascript:scroll(0,0)"><font size="4">>>Back to the top<<</font></a></p>
+	</div>
+</nav>
+
+	<div id="footer" class="container">
+		<nav class="navbar navbar-default">
+			<div class="navbar-inner navbar-content-center">
+			</div>
+		</nav>
+	</div>
+</body>
+</html>
