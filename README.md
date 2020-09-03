@@ -1,5 +1,5 @@
 # Papillary-Thyroid-Carcinoma-Gene-Panel
-========================================
+
 Abstract
 ----------------------------------------
 In this study, differentially expressed transcriptomes of three subtypes of papillary thyroid carcinoma (Classical, Follicular and TallCell) were obtained from TCGA database, and the specific genes expressed in each subtypes were analyzed for immune correlation. The survival-related gene Panel in the Classical subtype was calculated by machine learning , and the targeted gene related to lymph node involvement among the three subtypes and the drug related to them were screened in the end.
